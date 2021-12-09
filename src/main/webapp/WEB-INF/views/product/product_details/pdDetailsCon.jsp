@@ -49,6 +49,7 @@
 								<c:if test="${opList.oc_no eq 1}">
 									<option value="${opList.op_no}" class="opSelect">${opList.op_name}(
 										<c:if test="${opList.op_price > 0}">+</c:if><fmt:formatNumber value="${opList.op_price}" pattern="#,###" /> )
+										(남은 수량 : <c:if test="${opList.op_stock > 0}">${opList.op_stock}</c:if>)
 									</option>
 								</c:if>
 							</c:forEach>
@@ -62,10 +63,15 @@
                               <select name="op_no2" id="crushingOp" class="op2">
 							<option value="0">[필수] 옵션을 선택해 주세요</option>
 							<option value="0">----------------------------------------</option>
+							
 							<c:forEach var="opList" items="${opList}">
 								<c:if test='${opList.oc_no eq 2}'>
 									<option value="${opList.op_no}" class="opSelect">${opList.op_name}(
 										<c:if test="${opList.op_price > 0}">+</c:if><fmt:formatNumber value="${opList.op_price}" pattern="#,###" /> )
+										
+										
+										
+										
 									</option>
 								</c:if>
 							</c:forEach>
@@ -189,26 +195,26 @@
 									</td>
 
 
-									<td width="20%">
+									<td width="5%">
 										<c:choose>
 											<c:when test="${list.r_star == 1}">
-												<img src="../../../../resources/images/1-grade.png">
+												<img src="../../../../resources/images/1-grade.png" style="width: 88px;">
 											</c:when>
 
 											<c:when test="${list.r_star == 2}">
-												<img src="../../../../resources/images/2-grade.png">
+												<img src="../../../../resources/images/2-grade.png" style="width: 88px;">
 											</c:when>
 
 											<c:when test="${list.r_star == 3}">
-												<img src="../../../../resources/images/3-grade.png">
+												<img src="../../../../resources/images/3-grade.png" style="width: 88px;">
 											</c:when>
 
 											<c:when test="${list.r_star == 4}">
-												<img src="../../../../resources/images/4-grade.png">
+												<img src="../../../../resources/images/4-grade.png" style="width: 88px;">
 											</c:when>
 
 											<c:when test="${list.r_star == 5}">
-												<img src="../../../../resources/images/5-grade.png">
+												<img src="../../../../resources/images/5-grade.png" style="width: 88px;">
 											</c:when>
 										</c:choose>
 									</td>
