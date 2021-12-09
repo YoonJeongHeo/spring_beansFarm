@@ -32,13 +32,16 @@
          	 <tr>
          	 	<td width="10%" >
          	 	<c:forEach var="productList" items="${productList}">
-         	 		<c:if test="${cartList.p_no eq productList.p_no}"><img style="width: 100%; margin-left: 50%" src="/upload/product/${productList.p_thumbnail}"> </c:if>
+         	 		<c:if test="${cartList.p_no eq productList.p_no}"><img style="width: 100%; margin-left: 50%" src="/upload/product/${productList.p_thumbnail}"> 
+         	 			<input type="text" name="p_noList" class="p_noList" value="${productList.p_no}">
+         	 		</c:if>
          	 	</c:forEach>
          	 	</td>
          	 	<td>
          	 	
          	 	<c:forEach var="productList" items="${productList}">
          	 		<c:if test="${cartList.p_no eq productList.p_no}"><b>${productList.p_name}</b></c:if>
+         	 		
          	 	</c:forEach>
          	 	/
          	 	<c:forEach var="opList" items="${opList}">

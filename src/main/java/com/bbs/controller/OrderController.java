@@ -21,6 +21,7 @@ import com.bbs.model.AddressDTO;
 import com.bbs.model.CartDTO;
 import com.bbs.model.MemberDTO;
 import com.bbs.model.POptionDTO;
+import com.bbs.model.P_orderDTO;
 import com.bbs.model.ProductDTO;
 import com.bbs.service.AddressService;
 import com.bbs.service.CartService;
@@ -135,16 +136,38 @@ public class OrderController {
 	@PostMapping("/insert")
 	@ResponseBody
 	public String orderInsert(
-			MemberDTO m_dto,
+			HttpServletRequest request,
 			@RequestParam("order_no") String order_no,
-			@RequestParam("m_name") String m_name) {
+			@RequestParam("recipient_name") String recipient_name,
+			@RequestParam("postnum") String postnum,
+			@RequestParam("address") String address,
+			@RequestParam("detailed_address") String detailed_address,
+			@RequestParam("recipient_phone") String recipient_phone,
+			@RequestParam("totalPrice") String totalPrice,
+			@RequestParam("p_no") String p_no
+			
+						
+			) {
 		
+		HttpSession session = request.getSession();
+		Long userNO = (Long) session.getAttribute("userNO");
+				
 		System.out.println("주문서 추가");
-		System.out.println("회원번호 : " + m_dto.getM_no());
-		System.out.println(order_no);
-		System.out.println(m_name);
-		return "/orderviews/insert";
+		System.out.println("회원번호 : " + userNO);
+		System.out.println("주문번호 : " + order_no);
+		System.out.println("받는사람 : " + recipient_name);
+		System.out.println("우편번호 : " + postnum);
+		System.out.println("기본주소 : " + address);
+		System.out.println("상세주소 : " + detailed_address);
+		System.out.println("연락처 : " + recipient_phone);
+		System.out.println("결재금액 : " + totalPrice);
+		System.out.println("제품번호 : " + p_no);
 		
+		
+		
+		
+		
+		return "redirect:/";
 	}
 	
 	

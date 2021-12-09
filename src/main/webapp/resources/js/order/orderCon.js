@@ -1,6 +1,6 @@
 $(function(){
 	
-
+	
     $("input:radio[id=passBookchk]").click(function(){
         document.getElementById("passBook").style.display = "block";
     });
@@ -9,10 +9,13 @@ $(function(){
         document.getElementById("passBook").style.display = "none";
         
     })
+	
+	
 
-
+	
 	//전체 금액 나타내기
 	$( document ).ready(function() {
+		
 		var total = 0;
 		var delivery_price = 0;
 		
@@ -30,7 +33,7 @@ $(function(){
 	});
 	
 	$("#paymentBtn").on("click",function(){
-	
+		alert("ddd");
 	
 		var terms = $(".terms").is(":checked");
 		var passBookchk = $("#passBookchk").is(":checked");
@@ -42,9 +45,11 @@ $(function(){
 			//입금
 			alert("모달창 예정");
 		}else if(cardChk == true) {
+		
 			//카드
 			// check_module();
 			
+			// 주문변호
 			 var order_no = $("#order_no").val();
 			 var today = new Date();
 			 var month = ('0' + (today.getMonth() + 1)).slice(-2);
@@ -53,37 +58,50 @@ $(function(){
 			
 	 		 order_no = order_no + date;
 			
-			 var m_name = $("#m_name").val(); // 이름
-			 var m_phone = $("#m_phone").val(); // 전화번호
-			 var m_postnum = $("#m_postnum").val(); // 우편번호
-			 var m_address = $("#m_address").val(); // 기본주소
-			 var m_detailed_address = $("#m_detailed_address").val(); // 상세주소
-			 var address =  m_address + m_detailed_address// 통합주소
-			 
+			// 회원정보
+			 var recipient_name = $("#recipient_name").val(); // 받는사람
+			 var postnum = $("#postnum").val(); // 우편번호
+			 var address = $("#address").val(); // 기본주소
+			 var detailed_address = $("#detailed_address").val(); // 상세즈소
+		     var addr =  address + detailed_address// 통합주소	 
+			 var recipient_phone = $("#recipient_phone").val(); // 연락처
+			 			 
 			//주문금액
 			 var totalPrice = $("#totalPrice").val();
-		
-		
+			
+			//제품정보
+			
+			
 			$.ajax({
 				url : "/orderviews/insert", 
 		        type :'POST',
 		        dataType: 'json',
 				data : {
 						order_no:order_no,
-						date:date,
-						m_name:m_name,
-						m_phone:m_phone,
-						m_postnum:m_postnum,
+						recipient_name:recipient_name,
+						postnum:postnum,
+						address:address,
+						detailed_address:detailed_address,
+						recipient_phone:recipient_phone,
+						totalPrice:totalPrice,
+						p_no:p_no
 						
 						},
-		        success: function(res){
-				  alert(res);
+		        success: function(data){
+				  if(data == 0){
+				  alert(data);
 		          alert("결제성공");
+				 }else{
+					alert("결제실패")
+				}
+				  
 
-		        },error:function(){
-		          alert("Insert ajax 통신 실패!!!");
 		        }
 			})
+
+			
+		
+			
 		}
 	
 	
