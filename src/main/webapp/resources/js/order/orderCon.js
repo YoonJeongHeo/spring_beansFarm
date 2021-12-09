@@ -245,3 +245,76 @@ function setAddress(address){
 		document.querySelector("#recipient_phone").value = address.recipient_phone;
 	}
 	
+
+
+// 결제창(api)
+function check_module(){
+	
+	// 주문번호
+	 var order_no = $("#order_no").val() + date;
+
+	//주분번호 뒤에 날짜
+	 var today = new Date();
+	 var month = ('0' + (today.getMonth() + 1)).slice(-2);
+	 var day = ('0' + today.getDate()).slice(-2);
+	 var date = month + day;
+
+	order_no = order_no  + date;
+	
+	 var m_name = $("#m_name").val(); // 이름
+	 var m_phone = $("#m_phone").val(); // 전화번호
+	 var m_postnum = $("#m_postnum").val(); // 우편번호
+	 var m_address = $("#m_address").val(); // 기본주소
+	 var m_detailed_address = $("#m_detailed_address").val(); // 상세주소
+	 var address =  m_address + m_detailed_address// 통합주소
+	 
+//주문금액
+	 var totalPrice = $("#totalPrice").val();
+	 
+      var IMP = window.IMP; // 생략가능
+      IMP.init('imp21886594');
+      // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+      // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+      IMP.request_pay({
+       pg : 'inicis',
+       pay_method : 'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
+       merchant_uid : order_no, //상점에서 관리하시는 고유 주문번호를 전달
+       name : '(주)BeansFarm',
+       amount : 100, // 변경해야함~!!!!!!!!!!!!!!
+       buyer_name : m_name,
+       buyer_tel : m_phone,
+       buyer_addr : address,
+       buyer_postcode : m_postnum
+
+   }, function(rsp){
+		if(rsp.success){//결제 성공시
+			var msg = '결제가 완료되었습니다';
+			
+			$.ajax({
+				url : '/orderviews/insert', 
+		        type :'POST',
+		        data : {order_no:order_no,
+						m_name:m_name},
+		        contentType:'application/json;charset=utf-8',
+		        dataType: 'json', //서버에서 보내줄 데이터 타입
+
+		        success: function(res){
+				  alert(res);
+		          alert("결제성공");
+
+		        },
+
+		        error:function(){
+		          console.log("Insert ajax 통신 실패!!!");
+		        }
+			}) //ajax
+			
+		
+       } else {
+           var msg = '결제에 실패하였습니다.';
+           msg += '에러내용 : ' + rsp.error_msg;
+           
+           alert(msg);
+       }
+   });
+}
