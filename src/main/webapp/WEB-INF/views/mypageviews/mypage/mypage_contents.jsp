@@ -127,7 +127,29 @@
                                 		<li> <input type="hidden" id="r_no" value="${myreviewList.r_no}"> </li>
                                 	</ul>
                                 </td>
-                                <td width="5%" >${myreviewList.r_star} 점</td>
+                                <td width="5%" >
+                                	<c:choose>
+											<c:when test="${myreviewList.r_star == 1}">
+												<img src="../../../../resources/images/1-grade.png">
+											</c:when>
+
+											<c:when test="${myreviewList.r_star == 2}">
+												<img src="../../../../resources/images/2-grade.png">
+											</c:when>
+
+											<c:when test="${myreviewList.r_star == 3}">
+												<img src="../../../../resources/images/3-grade.png">
+											</c:when>
+
+											<c:when test="${myreviewList.r_star == 4}">
+												<img src="../../../../resources/images/4-grade.png">
+											</c:when>
+
+											<c:when test="${myreviewList.r_star == 5}">
+												<img src="../../../../resources/images/5-grade.png">
+											</c:when>
+										</c:choose>
+                                </td>
                                 <td width="10%"><button type="button" id="reviewUpdateBtn"  onclick="location.href='/mypageviews/myReviewList/reviewUpdateForm_view?r_no=${myreviewList.r_no}'">수정</button></td>
                                 <td width="10%" ><button class="reDelBtn" id="reviewDeleteBtn" value="${myreviewList.r_no}">삭제</button></td>
                             </tr>

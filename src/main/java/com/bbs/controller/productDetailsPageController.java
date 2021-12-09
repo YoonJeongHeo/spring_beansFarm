@@ -173,6 +173,8 @@ public class productDetailsPageController {
 			  model.addAttribute("ocList",ocList);
 			  model.addAttribute("pdDTO",pdDTO);
 			  
+			  System.out.println("=========================stock이 들어가 있나요"+opList);
+			  
 			  // 리뷰 수 카운트.
 			  int reviewCount = pd.reviewCount(p_no); 
 			  model.addAttribute("reviewCount",reviewCount);
