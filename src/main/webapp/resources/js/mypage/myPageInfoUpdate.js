@@ -31,7 +31,7 @@ $(function(){
 	$('.m_no_btn').on("click",function(e){
 		e.preventDefault();
 		let popUrl = "/mypageviews/myPageInfo/myPageInfo_addressManagePop";
-		let popOption = "width = 700px, height=650px, top=260px, left=950px, scrollbars=yes";
+		let popOption = "width = 900px, height=650px, top=260px, left=950px, scrollbars=yes";
 		
 		window.open(popUrl,"주소 찾기",popOption);
 		

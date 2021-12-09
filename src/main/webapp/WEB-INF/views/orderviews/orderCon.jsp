@@ -248,19 +248,18 @@
 				<tr>
 					<th></th>
 					<td>
-						<button id="paymentBtn" onclick="check_module()">결제하기</button>
+						<button id="paymentBtn">결제하기</button>
 						
 						<!-- 결제창 값 -->
 						<% UUID uuid = UUID.randomUUID(); %>
-						<input type="text" name="order_no" id="order_no" value="<%= uuid %>">
+						<input type="hidden" name="order_no" id="order_no" value="<%= uuid %>">
 						<input type="hidden" name="m_name" id="m_name" value="${memberList.m_name}">
 						<input type="hidden" name="m_phone" id="m_phone" value="${memberList.m_phone}">
 						<input type="hidden" name="m_postnum" id="m_postnum" value="${memberList.m_postnum}">
 						<input type="hidden" name="m_address" id="m_address" value="${memberList.m_address}">
 						<input type="hidden" name="m_detailed_address" id="m_detailed_address" value="${memberList.m_detailed_address}">
-						
+						<input type="hidden" name="totalPrice" id="totalPrice">
 					
-					<!-- 절대빼면 안됨 전화번호, 결제금액 ,  -->
 					</td>
 				</tr>
             </table>
@@ -268,77 +267,5 @@
     </div>
     
     
-<script>
-function check_module(){
-	// 주문번호
-	 var order_no = $("#order_no").val();
-	
-	//주분번호 뒤에 날짜
-	 var today = new Date();
-	 var month = ('0' + (today.getMonth() + 1)).slice(-2);
-	 var day = ('0' + today.getDate()).slice(-2);
-	 var date = month + day;
-	
-	 var m_name = $("#m_name").val(); // 이름
-	 var m_phone = $("#m_phone").val(); // 전화번호
-	 var m_postnum = $("#m_postnum").val(); // 우편번호
-	 var m_address = $("#m_address").val(); // 기본주소
-	 var m_detailed_address = $("#m_detailed_address").val(); // 상세주소
-	 var address =  m_address + m_detailed_address// 통합주소
-	 
-	 
-	 
-      var IMP = window.IMP; // 생략가능
-      IMP.init('imp18470258');
-      // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
-      // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
-      IMP.request_pay({
-       pg : 'inicis',
-       pay_method : 'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
-       merchant_uid : order_no + date, //상점에서 관리하시는 고유 주문번호를 전달
-       name : '(주)BeansFarm',
-       amount : g,
-       buyer_name : m_name,
-       buyer_tel : m_phone,
-       buyer_addr : address,
-       buyer_postcode : m_postnum
-   }, function(rsp) {
-       if ( rsp.success ) {
-          //[1] 서버단에서 결제정보 조회를 위해 jQuery ajax로 imp_uid 전달하기
-          jQuery.ajax({
-             url: "/payment", //cross-domain error가 발생하지 않도록 주의해주세요
-             type: 'POST',
-             contentType: "application/json; charset=UTF-8",
-             data: JSON.stringify({
-                imp_uid : rsp.imp_uid
-                //기타 필요한 데이터가 있으면 추가 전달
-             })
-          }).done(function(data) {
-             //[2] 서버에서 REST API로 결제정보확인 및 서비스루틴이 정상적인 경우
-             if ( everythings_fine ) {
-                var msg = '결제가 완료되었습니다.';
-                msg += '\n고유ID : ' + rsp.imp_uid;
-                msg += '\n상점 거래ID : ' + rsp.merchant_uid;
-                msg += '\결제 금액 : ' + rsp.paid_amount;
-                msg += '카드 승인번호 : ' + rsp.apply_num;
-                
-                alert(msg);
-             } else {
-                //[3] 아직 제대로 결제가 되지 않았습니다.
-                //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-             }
-          });
-       } else {
-           var msg = '결제에 실패하였습니다.';
-           msg += '에러내용 : ' + rsp.error_msg;
-           
-           alert(msg);
-       }
-   });
-}   
-
-
-
-</script>
     
     

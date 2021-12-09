@@ -23,9 +23,10 @@ $(function(){
 		delivery_price = 2500;
 		}
 		
-		$(".total_price").html(numWithCommas(total))
-		$(".delivery_price").html(numWithCommas(delivery_price))
-		$(".last_price").html(numWithCommas(total+delivery_price))
+		$(".total_price").html(numWithCommas(total));
+		$(".delivery_price").html(numWithCommas(delivery_price));
+		$(".last_price").html(numWithCommas(total+delivery_price));
+		$("#totalPrice").val(total+delivery_price);
 	});
 	
 	$("#paymentBtn").on("click",function(){
@@ -42,12 +43,47 @@ $(function(){
 			alert("모달창 예정");
 		}else if(cardChk == true) {
 			//카드
+			// check_module();
 			
+			 var order_no = $("#order_no").val();
+			 var today = new Date();
+			 var month = ('0' + (today.getMonth() + 1)).slice(-2);
+			 var day = ('0' + today.getDate()).slice(-2);
+			 var date = month + day;
 			
+	 		 order_no = order_no + date;
 			
-			
-			
-			
+			 var m_name = $("#m_name").val(); // 이름
+			 var m_phone = $("#m_phone").val(); // 전화번호
+			 var m_postnum = $("#m_postnum").val(); // 우편번호
+			 var m_address = $("#m_address").val(); // 기본주소
+			 var m_detailed_address = $("#m_detailed_address").val(); // 상세주소
+			 var address =  m_address + m_detailed_address// 통합주소
+			 
+			//주문금액
+			 var totalPrice = $("#totalPrice").val();
+		
+		
+			$.ajax({
+				url : "/orderviews/insert", 
+		        type :'POST',
+		        dataType: 'json',
+				data : {
+						order_no:order_no,
+						date:date,
+						m_name:m_name,
+						m_phone:m_phone,
+						m_postnum:m_postnum,
+						
+						},
+		        success: function(res){
+				  alert(res);
+		          alert("결제성공");
+
+		        },error:function(){
+		          alert("Insert ajax 통신 실패!!!");
+		        }
+			})
 		}
 	
 	
@@ -105,7 +141,7 @@ $(function(){
 	$('.m_no_btn').on("click",function(e){
 		e.preventDefault();
 		let popUrl = "/mypageviews/myPageInfo/myPageInfo_addressManagePop";
-		let popOption = "width = 700px, height=650px, top=260px, left=950px, scrollbars=yes";
+		let popOption = "width = 900px, height=650px, top=260px, left=950px, scrollbars=yes";
 		
 		window.open(popUrl,"주소 찾기",popOption);
 		
@@ -190,3 +226,4 @@ function setAddress(address){
 		document.querySelector("#recipient_name").value = address.recipient_name;
 		document.querySelector("#recipient_phone").value = address.recipient_phone;
 	}
+	

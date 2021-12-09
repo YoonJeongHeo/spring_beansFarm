@@ -132,7 +132,21 @@ public class OrderController {
 	}
 	
 	
-	
+	// 결제완료 (주문서추가)
+	@PostMapping("/insert")
+	@ResponseBody
+	public String orderInsert(
+			MemberDTO m_dto,
+			@RequestParam("order_no") String order_no,
+			@RequestParam("m_name") String m_name) {
+		
+		System.out.println("주문서 추가");
+		System.out.println("회원번호 : " + m_dto.getM_no());
+		System.out.println(order_no);
+		System.out.println(m_name);
+		return "/orderviews/insert";
+		
+	}
 	
 	
 	
