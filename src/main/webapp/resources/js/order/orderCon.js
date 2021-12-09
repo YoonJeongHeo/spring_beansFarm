@@ -246,7 +246,7 @@ function setAddress(address){
 	}
 	
 
-
+// 결재창 미완성
 // 결제창(api)
 function check_module(){
 	
