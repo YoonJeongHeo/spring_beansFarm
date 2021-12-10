@@ -44,6 +44,8 @@ public interface MemberService {
 
 	public MemberDTO selectByOne(Long m_no);
 
+	public List<MemberDTO> adminMainMemberList();
+
 	
 
 

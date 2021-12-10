@@ -1,5 +1,7 @@
 package com.bbs.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,12 @@ public class p_orderServiceImpl implements p_orderService{
 	public void orderInsert(P_orderDTO p_orderDTO) {
 		
 		p_orderMapper.orderInsert(p_orderDTO);
+	}
+
+	@Override
+	public List<P_orderDTO> adminMainOH() {
+		
+		return p_orderMapper.adminMainOH();
 	}
 	
 	

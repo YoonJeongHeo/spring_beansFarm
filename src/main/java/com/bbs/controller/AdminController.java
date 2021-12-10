@@ -19,6 +19,7 @@ import com.bbs.model.AdminDTO;
 import com.bbs.model.CouponDTO;
 import com.bbs.model.Inquiry_classificationDTO;
 import com.bbs.model.MemberDTO;
+import com.bbs.model.P_orderDTO;
 import com.bbs.page.AdminCriteria;
 import com.bbs.page.AdminViewPage;
 import com.bbs.page.Criteria;
@@ -27,6 +28,7 @@ import com.bbs.service.AdminService;
 import com.bbs.service.CouponService;
 import com.bbs.service.Inquiry_classificationService;
 import com.bbs.service.MemberService;
+import com.bbs.service.p_orderService;
 
 @Controller
 @RequestMapping("/adminviews/*")
@@ -41,6 +43,9 @@ public class AdminController {
 	
 	@Autowired
 	private CouponService couponService;
+	
+	@Autowired
+	private p_orderService p_orderService;
 	
 	/* 문의 분류 서비스 */
 	@Autowired
@@ -66,17 +71,22 @@ public class AdminController {
 	
 	//관리자 페이지 가기
 	@GetMapping("/adminMain_view")
-	public String adminMain_view(Model model, MemberDTO memberDTO,
-			AdminCriteria cri) {
+	public String adminMain_view(Model model, MemberDTO memberDTO
+			) {
 		
 		System.out.println("관리자 페이지 가기");
 		
-		List<MemberDTO> memberList = memberService.listAllMain(cri);
-		model.addAttribute("memberList",memberList);
+		List<P_orderDTO> adminMainOH = p_orderService.adminMainOH();
+		model.addAttribute("adminMainOH",adminMainOH);
 		
-		int total = memberService.getTotalMain(cri);
-		AdminViewPage vp = new AdminViewPage(cri, total);
-		model.addAttribute("pageMaker", vp);
+		System.out.println(adminMainOH);
+		
+		List<MemberDTO> adminMainMemberList = memberService.adminMainMemberList();
+		
+		model.addAttribute("adminMainMemberList",adminMainMemberList);
+		
+		
+		
 		
 		return "/adminviews/adminMain_view";
 	}

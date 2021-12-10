@@ -60,6 +60,8 @@ public interface MemberMapper {
 
 	public MemberDTO selectByOne(Long m_no);
 
+	public List<MemberDTO> adminMainMemberList();
+
 	
 
 

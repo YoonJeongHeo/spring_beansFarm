@@ -8,5 +8,8 @@
     	values(#{order_id}, #{m_no}, #{postnum}, #{address}, #{detailed_address}, #{recipient_name}, #{recipient_phone}, #{order_price}, #{p_no}, #{op_no1}, #{option_quantity1}, #{op_no2})
 	</insert>
 
-
+	<select id="adminMainOH" resultType="com.bbs.model.P_orderDTO">
+		select * from member m join p_order po on m.m_no = po.m_no join product p on po.p_no = p.p_no limit 0, 30
+	</select>
+	
 </mapper>

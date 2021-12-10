@@ -121,6 +121,12 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.selectByOne(m_no);
 	}
 
+	@Override
+	public List<MemberDTO> adminMainMemberList() {
+		
+		return memberMapper.adminMainMemberList();
+	}
+
 	
 
 	

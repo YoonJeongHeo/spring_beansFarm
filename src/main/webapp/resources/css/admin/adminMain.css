@@ -72,3 +72,25 @@
     text-decoration: none;
     color: red;
 }
+
+.memberAllListPageDIV{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#memberAllListPage{
+	
+	border-radius: 25px;
+	margin-bottom: 1rem;
+	width: 10rem;
+	height: 2rem;
+}
+
+#orderAllListPage{
+	
+	border-radius: 25px;
+	margin-bottom: 1rem;
+	width: 10rem;
+	height: 2rem;
+}
