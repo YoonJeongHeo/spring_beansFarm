@@ -66,6 +66,7 @@ $(function(){
 	});
 	
 	// 무통장입금 모달창입금시 확인버튼 누르기
+	
 	$("#bankChk").on("click", function(){
 		location.href="/";
 	});
