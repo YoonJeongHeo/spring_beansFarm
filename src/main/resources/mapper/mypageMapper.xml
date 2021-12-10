@@ -18,7 +18,7 @@
 		select * from review where m_no = #{m_no} limit #{skip}, #{amount}
 	</select>
 	
-		<select id="getTotal" resultType="int">
+	<select id="getTotal" resultType="int">
 		select count(*) from review where m_no = #{m_no}
 	</select>
 	
