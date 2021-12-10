@@ -191,6 +191,7 @@ public class OrderController {
 			p_DTO.setOp_no2(cartDTO.getOp_no2());
 			p_DTO.setOrder_price(cartDTO.getOrder_price());
 			orderService.orderInsert(p_DTO);
+			cartService.deleteOne(i);
 		}
 		
 		
