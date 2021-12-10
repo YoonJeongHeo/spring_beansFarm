@@ -33,7 +33,7 @@
          	 	<td width="10%" >
          	 	<c:forEach var="productList" items="${productList}">
          	 		<c:if test="${cartList.p_no eq productList.p_no}"><img style="width: 100%; margin-left: 50%" src="/upload/product/${productList.p_thumbnail}"> 
-         	 			<input type="text" name="p_noList" class="p_noList" value="${productList.p_no}">
+         	 			<input type="hidden" name="p_noList" class="p_noList" value="${productList.p_no}">
          	 		</c:if>
          	 	</c:forEach>
          	 	</td>
