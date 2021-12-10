@@ -34,6 +34,9 @@ $(function(){
 		$("#totalPrice").val(total+delivery_price);
 	});
 	
+	
+	
+	//결재하기 버튼 클릭시
 	$("#paymentBtn").on("click",function(){
 	
 		var terms = $(".terms").is(":checked");
@@ -46,64 +49,9 @@ $(function(){
 			//입금
 			alert("모달창 예정");
 		}else if(cardChk == true) {
-		
 			//카드
-			// check_module();
-			
-			// 주문변호
-			 var order_id = $("#order_no").val();
-			 var today = new Date();
-			 var month = ('0' + (today.getMonth() + 1)).slice(-2);
-			 var day = ('0' + today.getDate()).slice(-2);
-			 var date = month + day;
-			
-	 		 order_id = order_id + date;
-			
-			// 회원정보
-			 var recipient_name = $("#recipient_name").val(); // 받는사람
-			 var postnum = $("#postnum").val(); // 우편번호
-			 var address = $("#address").val(); // 기본주소
-			 var detailed_address = $("#detailed_address").val(); // 상세즈소
-		     var addr =  address + detailed_address// 통합주소	 
-			 var recipient_phone = $("#recipient_phone").val(); // 연락처
-			
-			//제품정보
-			var cart_noArr = new Array();
-			
-			$("input[name=cart_noList]").each(function(i, item){
-			   	cart_noArr.push($(item).val());
-		   	});
-			
-			$.ajax({
-				url : "/orderviews/insert", 
-		        type :'POST',
-		        dataType: 'json',
-				data : {
-						order_id:order_id,
-						recipient_name:recipient_name,
-						postnum:postnum,
-						address:address,
-						detailed_address:detailed_address,
-						recipient_phone:recipient_phone,
-						cart_noArr:cart_noArr
-						
-						},
-				traditional:true,
-		        success: function(data){
-				  if(data == 0){
-				  alert(data);
-		          alert("결제성공");
-				 }else{
-					alert("결제실패")
-				}
-				  
-
-		        }
-			})
-
-			
+			check_module();
 		}
-	
 	
 	});
 	
@@ -245,4 +193,85 @@ function setAddress(address){
 		document.querySelector("#recipient_name").value = address.recipient_name;
 		document.querySelector("#recipient_phone").value = address.recipient_phone;
 	}
+	
+	
+// 결제창(api)
+function check_module(){
+	
+	// 주문변호
+	 var order_id = $("#order_no").val();
+	 var today = new Date();
+	 var month = ('0' + (today.getMonth() + 1)).slice(-2);
+	 var day = ('0' + today.getDate()).slice(-2);
+	 var date = month + day;
+	
+	 order_id = order_id + date;
+	
+	// 회원정보
+	 var recipient_name = $("#recipient_name").val(); // 받는사람
+	 var postnum = $("#postnum").val(); // 우편번호
+	 var address = $("#address").val(); // 기본주소
+	 var detailed_address = $("#detailed_address").val(); // 상세즈소
+     var addr =  address + detailed_address// 통합주소	 
+	 var recipient_phone = $("#recipient_phone").val(); // 연락처
+	
+	//제품정보
+	var cart_noArr = new Array();
+	var totalPrice = $("#totalPrice").val();
+	
+	$("input[name=cart_noList]").each(function(i, item){
+	   	cart_noArr.push($(item).val());
+   	});
+
+	 
+      var IMP = window.IMP; // 생략가능
+      IMP.init('imp21886594');
+      // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+      // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+      IMP.request_pay({
+       pg : 'inicis',
+       pay_method : 'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
+       merchant_uid : order_id, //상점에서 관리하시는 고유 주문번호를 전달
+       name : '(주)BeansFarm',
+       amount : totalPrice, // 변경해야함~!!!!!!!!!!!!!!
+       buyer_name : recipient_name,
+       buyer_tel : recipient_phone,
+       buyer_addr : addr,
+       buyer_postcode : postnum
+
+   }, function(rsp){
+		if(rsp.success){//결제 성공시
+		
+			$.ajax({
+				url : "/orderviews/insert", 
+		        type :'POST',
+		        dataType: 'text',
+				data : {
+						order_id:order_id,
+						recipient_name:recipient_name,
+						postnum:postnum,
+						address:address,
+						detailed_address:detailed_address,
+						recipient_phone:recipient_phone,
+						cart_noArr:cart_noArr
+						},
+				traditional:true,
+				async:false,
+		        success: function(data){
+					alert("결재가 되었습니다");
+					location.href="../mypageviews/myShoppingList/myShopping_view";
+				  
+		        }, error: function() {
+		            alert('결재 오류');
+					location.reload();
+		        }
+			}) //ajax
+			
+		
+       } else {
+           alert('결재 실패');
+			location.reload();
+       }
+   });
+}
 	

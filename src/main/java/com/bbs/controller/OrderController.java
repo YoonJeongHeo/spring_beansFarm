@@ -195,7 +195,7 @@ public class OrderController {
 		
 		
 		
-		return "redirect:/";
+		return "/orderviews/insert";
 	}
 	
 	
