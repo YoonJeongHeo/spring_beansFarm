@@ -43,7 +43,7 @@
 			
 			<div class="memberAllListPageDIV">
 			
-				<button type="button" onclick="location.href='/adminviews/'" id="orderAllListPage">전체 목록 보기</button>
+				<button type="button" onclick="location.href='/adminviews/orderList/orderList_view'" id="orderAllListPage">전체 목록 보기</button>
 			
 			</div>
 			
@@ -65,13 +65,13 @@
 					<th width="25%">가입일</th>
 				</tr>
 				
-				<c:forEach var="memberList" items="${memberList}">
+				<c:forEach var="adminMainMemberList" items="${adminMainMemberList}">
 				<tr>
-					<td>${memberList.m_no}</td>
-					<td>${memberList.m_id}</td>
-					<td>${memberList.m_name}</td>
-					<td>${memberList.membership_name}</td>
-					<td><fmt:formatDate value="${memberList.m_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
+					<td>${adminMainMemberList.m_no}</td>
+					<td>${adminMainMemberList.m_id}</td>
+					<td>${adminMainMemberList.m_name}</td>
+					<td>${adminMainMemberList.membership_name}</td>
+					<td><fmt:formatDate value="${adminMainMemberList.m_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
 				</tr>
 				</c:forEach>
 			</table>

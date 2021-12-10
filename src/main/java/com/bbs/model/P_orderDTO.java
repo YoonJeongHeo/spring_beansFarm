@@ -31,6 +31,7 @@ public class P_orderDTO {
 	private String p_name;
 	private String m_id;	
 	private String membership_no;	
+	private String membership_name;	
 	private String m_email;	
 	
 	

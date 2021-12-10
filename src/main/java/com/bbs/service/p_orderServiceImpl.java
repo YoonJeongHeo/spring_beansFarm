@@ -25,6 +25,12 @@ public class p_orderServiceImpl implements p_orderService{
 		
 		return p_orderMapper.adminMainOH();
 	}
+
+	@Override
+	public List<P_orderDTO> adminOrderListPage() {
+		
+		return p_orderMapper.adminOrderListPage();
+	}
 	
 	
 

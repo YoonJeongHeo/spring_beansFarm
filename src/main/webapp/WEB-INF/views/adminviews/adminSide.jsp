@@ -23,7 +23,7 @@
 						</ul>
 					</div>
 				</li>
-				<li class="list"><a href="#">제품 주문 현황</a></li>
+				<li class="list"><a href="/adminviews/orderList/orderList_view">제품 주문 현황</a></li>
 				<li class="list"><a href="/adminviews/adminMemberList_view">회원 관리</a></li>
 				<li class="list"><a href="/adminviews/memberShip/memberShip_view">회원멤버쉽 관리</a></li>
 				<li class="list"><a href="/adminviews/coupon/couponGiftAll_view">회원 쿠폰 지급</a></li>
