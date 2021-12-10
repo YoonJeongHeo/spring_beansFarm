@@ -1,5 +1,4 @@
 $(function(){
-	alert("122121")
 	$(".reviewBtn").on("click",function(){
 	
 		var order_no = $(this).closest('td').find('.order_no').val();
