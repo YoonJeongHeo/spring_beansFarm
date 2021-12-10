@@ -172,8 +172,8 @@ values("공지제목", "공지내용", 1);
 
 
 -- 주문서s
- insert into p_order(m_no, postnum, address, detailed_address, recipient_name, recipient_phone, order_price, p_no, op_no1, option_quantity1, op_no2)
-    values(1, "100", "대구", "달서구", "홍길동", "010-1111-1111", 5000, 1, 1, 1, 1);
+ insert into p_order(order_id, m_no, postnum, address, detailed_address, recipient_name, recipient_phone, order_price, p_no, op_no1, option_quantity1, op_no2)
+    values("uuid", 1, "100", "대구", "달서구", "홍길동", "010-1111-1111", 5000, 1, 1, 1, 1);
    
 -- 제품상세페이지
 insert into product_details_page(p_no, pd_image) values(1, "브라질 옐로우 버번.jpg");
