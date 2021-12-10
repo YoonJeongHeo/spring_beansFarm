@@ -41,7 +41,7 @@
                                 <td width="15%">${myOrderHistory.order_no}</td> 
                                 <td width="25%" colspan="2">
 	                                 <ul>
-	                                  	<li>${myOrderHistory.order_price}</li>
+	                                  	<li><fmt:formatNumber value="${myOrderHistory.order_price}" pattern="#,###" /></li>
 	                                  	<li>${myOrderHistory.product_quantity}</li>
 	                                 </ul>
                             	</td>

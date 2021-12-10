@@ -13,6 +13,10 @@
     height : auto;
 }
 
+.reviewBtn {
+	padding: 2% 5%;
+	cursor:pointer;
+}
 .mypageTableHo:hover{
 	font-weight: bold;
 	background-color: rgba(0,0,0,0.1);
@@ -54,10 +58,23 @@
 .mypageTabel {
     margin: 0 auto;
     width: 95%;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    
+    border-top: 0.2rem solid black;
+    border-bottom: 0.2rem solid black;
     min-width: 63rem;
+    border-spacing: 0;
 }
+
+.mypageTabel th {
+	border-bottom: solid 0.1rem black;;
+	height: 5rem;
+}
+
+.mypageTabel td{
+	border-top: solid 0.1rem #D3D3D3;;
+	height: 3rem;
+}
+
 
 #myShoppingList th {
     padding: 0.5%;

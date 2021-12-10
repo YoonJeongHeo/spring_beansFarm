@@ -4,6 +4,7 @@
     <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../../../../resources/css/myShopping/myShoppingCenterCon.css">
+
 <script src="../../../../resources/js/myShopping.js" ></script>
 
                 <div id="con2">
@@ -35,7 +36,7 @@
                                 <td width="15%">${myAllOrderHistory.order_no}</td> 
                                 <td width="25%" colspan="2">
 	                                 <ul>
-	                                  	<li>${myAllOrderHistory.order_price}</li>
+	                                  	<li><fmt:formatNumber value="${myAllOrderHistory.order_price}" pattern="#,###" /></li>
 	                                  	<li>${myAllOrderHistory.product_quantity}</li>
 	                                 </ul>
                             	</td>
