@@ -84,6 +84,7 @@
     height: 3rem;
     font-size: 1rem;
     background-color: #FFFFE0;
+    cursor:pointer;
 }
 
 #buyBtn {
@@ -91,6 +92,7 @@
     height: 3rem;
     font-size: 1rem;
     background-color: #FFCCC9;
+    cursor:pointer;
 }
 
 #con2 {

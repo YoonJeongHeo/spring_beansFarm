@@ -137,7 +137,7 @@
                 <tr>
                     <th rowspan="2">받으실곳</th>
                     <td><input type="text" name="postnum" id="postnum" value="${memberList.m_postnum}" readonly>
-                    <input type="button" onclick="postcode();" value="우편번호 찾기"></td>
+                    <input type="button" id="postnumBtn" onclick="postcode();" value="우편번호 찾기"></td>
                     
                 </tr>
                 <tr>
@@ -266,6 +266,24 @@
 					</td>
 				</tr>
             </table>
+            
+            <!-- 무통장입금 모달 -->
+            <div class="nobankbook">
+            	<div class="modal_body">
+            		<h1>입금계좌안내</h1>
+            		<br>
+            		<hr>
+            		<br>
+            		<h3>대구은행<br><br>
+            			182-07-011131-3 [예금주 : (주)Beans Farm]
+            		</h3>
+            		<br>
+            		<button id="bankChk">확인</button>
+            		<br>
+            	</div>
+            </div>
+
+            
         </div>
     </div>
     

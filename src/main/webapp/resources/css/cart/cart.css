@@ -100,6 +100,9 @@
     display: flex;
     justify-content: center;
 }
+#orderNoBtn {
+	cursor:pointer;
+}
 
 #orderBtn {
     width: 20%;
@@ -109,6 +112,7 @@
     background-color: rgb(233, 233, 233);
     font-size: 1.5rem;
     border-radius: 15rem;
+    cursor:pointer;
 }
 
 #orderBtn:hover {
@@ -139,6 +143,7 @@
 	color: green;
     background-color: rgb(233, 233, 233);
     border: 0.1rem solid green;
+    cursor:pointer;
 }
 
 #choiceBtn:hover, #allBtn:hover {

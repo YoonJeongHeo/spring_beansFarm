@@ -2,8 +2,6 @@
 $(function () {
 	
 	
-	
-	
 	var op1Chk = true;
 	var op2Chk = true;
 	var productPrice = parseInt($("#productPrice").val());

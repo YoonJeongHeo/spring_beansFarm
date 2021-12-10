@@ -17,6 +17,7 @@ $(function(){
 	$( document ).ready(function() {
 	
 		
+		$(".nobankbook").hide();
 		
 		var total = 0;
 		var delivery_price = 0;
@@ -47,12 +48,27 @@ $(function(){
 			alert("이용 약관에 동의 해 주세요")
 		}else if(passBookchk == true) {
 			//입금
-			alert("모달창 예정");
+			var bankName_w = $("#bankName_w").val();
+			
+			if(bankName_w == ""){
+				alert("입금자명을 입력하세요");
+			
+			}else {
+			
+				$(".nobankbook").show();
+			}
+			
 		}else if(cardChk == true) {
 			//카드
 			check_module();
 		}
 	
+	});
+	
+	// 무통장입금 모달창입금시 확인버튼 누르기
+	
+	$("#bankChk").on("click", function(){
+		location.href="/";
 	});
 	
 	
