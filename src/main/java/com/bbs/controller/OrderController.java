@@ -144,7 +144,7 @@ public class OrderController {
 			@RequestParam("detailed_address") String detailed_address,
 			@RequestParam("recipient_phone") String recipient_phone,
 			@RequestParam("totalPrice") String totalPrice,
-			@RequestParam("p_no") String p_no
+			@RequestParam("p_noArr") List<String> p_noArr
 			
 						
 			) {
@@ -161,7 +161,7 @@ public class OrderController {
 		System.out.println("상세주소 : " + detailed_address);
 		System.out.println("연락처 : " + recipient_phone);
 		System.out.println("결재금액 : " + totalPrice);
-		System.out.println("제품번호 : " + p_no);
+		System.out.println("제품번호 : " + p_noArr);
 		
 		
 		
