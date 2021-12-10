@@ -233,12 +233,6 @@ ALTER TABLE beansFarm.product_details_page
 			p_no -- 제품번호
 		);
 
--- 제품상세페이지 유니크 인덱스
-CREATE UNIQUE INDEX UIX_product_details_page
-	ON beansFarm.product_details_page ( -- 제품상세페이지
-		p_no ASC -- 제품번호
-	);
-
 ALTER TABLE beansFarm.product_details_page
 	MODIFY COLUMN p_no BIGINT NOT NULL AUTO_INCREMENT;
 
@@ -408,12 +402,6 @@ ALTER TABLE beansFarm.p_order
 		PRIMARY KEY (
 			order_no -- 주문번호
 		);
-
--- 주문서 유니크 인덱스
-CREATE UNIQUE INDEX UIX_p_order
-	ON beansFarm.p_order ( -- 주문서
-		order_id ASC -- 주문아이디
-	);
 
 ALTER TABLE beansFarm.p_order
 	MODIFY COLUMN order_no BIGINT NOT NULL AUTO_INCREMENT;
