@@ -10,6 +10,8 @@ public interface p_orderService {
 
 	public List<P_orderDTO> adminMainOH();
 
+	public List<P_orderDTO> adminOrderListPage();
+
 	
 
 }

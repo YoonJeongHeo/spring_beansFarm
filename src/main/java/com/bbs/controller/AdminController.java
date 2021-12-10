@@ -221,7 +221,20 @@ public class AdminController {
 	}
 	
 	
-	
+	//관리자 주문리스트 페이지 이동
+	@GetMapping("/orderList/orderList_view")
+	public String adminOrderList_view(Model model) {
+		
+		System.out.println("======================1");
+		System.out.println("관리자 주문리스트 페이지 이동");
+		
+		List<P_orderDTO> adminOrderListPage = p_orderService.adminOrderListPage();
+		model.addAttribute("adminOrderListPage",adminOrderListPage);
+		
+		System.out.println(adminOrderListPage);
+		
+		return "/adminviews/orderList/orderList_view";
+	}
 	
 	//관리자 회원리스트 페이지 이동
 	@GetMapping("/adminMemberList_view")
@@ -249,7 +262,6 @@ public class AdminController {
 	
 	
 		
-	//	관리자 회원리스트에서 관리 버튼 부분
 	
 	
 	// 관리자 회원 한명의 정보 보기

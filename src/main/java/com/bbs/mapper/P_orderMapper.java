@@ -10,6 +10,8 @@ public interface P_orderMapper {
 
 	public List<P_orderDTO> adminMainOH();
 
+	public List<P_orderDTO> adminOrderListPage();
+
 
 
 }
