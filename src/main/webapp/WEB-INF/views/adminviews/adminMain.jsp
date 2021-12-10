@@ -14,6 +14,39 @@
 		<div class="order">
 		<br><br>
 			<h1>제품주문</h1>
+			
+			<br><br><br>
+			
+			<table id="adminTbl">
+				<tr>
+					<th width="10%">번호</th>
+					<th width="10%">아이디</th>
+					<th width="50%">주문상품</th>
+					<th width="15%">주문금액</th>
+					<th width="15%">주문시간</th>
+					
+				</tr>
+				<c:forEach var="adminMainOH" items="${adminMainOH}">
+				<tr>
+					<td>${adminMainOH.order_no}</td>
+					<td>${adminMainOH.m_id}</td>
+					<td>${adminMainOH.p_name}</td>
+					<td>${adminMainOH.order_price}</td>
+					<td><fmt:formatDate value="${adminMainOH.order_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
+				</tr>
+				</c:forEach>
+				
+				
+			</table>
+			
+			<br><br>
+			
+			<div class="memberAllListPageDIV">
+			
+				<button type="button" onclick="location.href='/adminviews/'" id="orderAllListPage">전체 목록 보기</button>
+			
+			</div>
+			
 		</div>
 		
 			    
@@ -45,35 +78,11 @@
 			
 			<br><br>
 			
-			<!-- 페이징처리 -->
-	        <div class="pageInfo">
+			<div class="memberAllListPageDIV">
 			
-				<c:if test="${pageMaker.prev}">
-					<li><a href="${pageMaker.startPage -1}">이전</a></li>
-				</c:if>
-				
-				
-				<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-					<li><a href="${num}">${num}</a></li>
-				</c:forEach>
-				
-				
-				<c:if test="${pageMaker.next}">
-					<li><a href="${pageMaker.endPage +1}">다음</a></li>
-				</c:if>
-				
+			<button type="button" onclick="location.href='/adminviews/adminMemberList_view'" id="memberAllListPage">전체 목록 보기</button>
+			
 			</div>
-			
-			
-			
-			<form method="get" class="moveForm">
-				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
-				<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-				
-				<input type="hidden" name="type" value="${pageMaker.cri.type }">
-				<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-			</form>
-			
 		</div>
 		
 		

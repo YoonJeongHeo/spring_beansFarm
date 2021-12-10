@@ -49,7 +49,10 @@
 						where m.membership_no = ms.membership_no
 	</select>
 	
-	
+	<select id="adminMainMemberList" resultType="com.bbs.model.MemberDTO">
+		select m.*,ms.membership_name from member m join membership ms 
+					where m.membership_no = ms.membership_no limit 0, 30
+	</select>
 	
 	
 	

@@ -27,6 +27,11 @@ public class P_orderDTO {
 	private int op_no2;
 	private String p_return;
 	
+	// 관리자페이지에서 전체 주문현황 보기위한 데이터 추가.
+	private String p_name;
+	private String m_id;	
+	private String membership_no;	
+	private String m_email;	
 	
 	
 }
