@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="../../../../../resources/css/admin/adminOrderList.css">
 
 <script src="../../../../../resources/js/jquery-3.6.0.min.js" ></script>
-<script src="../../../../../resources/js/admin/memberShip/memberShip.js"></script>
+<script src="../../../../../resources/js/admin/adminOrderList.js"></script>
 
 	<div id="con2">
         <h1>제품 주문 현황</h1>
@@ -14,15 +14,15 @@
         <br><br>
         
 		<!-- 검색기능 -->
-    <%--     <div class="searchBox">
+         <div class="searchBox">
             <select name="type" id="type">
                 <option value="s_id" <c:out value="${pageMaker.cri.type eq 's_id'?'selected':'' }"/>>아이디</option>
-                <option value="s_tier" <c:out value="${pageMaker.cri.type eq 's_tier'?'selected':'' }"/>>등급</option>
+                
             </select>
             <input type="text" name="keyword" id="keyword" placeholder="검색할 내용을 입력하세요" 
             		value="${pageMaker.cri.keyword}">
             <button id="searchBtn">검색</button>
-        </div> --%>
+        </div> 
         
         <br><br><br>
 		
@@ -30,7 +30,7 @@
         
                 <table id="adminTbl">
                     <tr>
-                        <th width="2%"><input type='checkbox' name='memberAll' id='memberAll'/></th>
+                        <th width="2%"><input type='checkbox' name='orderAll' id='orderAll'/></th>
                         <th width="3%"><span>주문번호</span></th>
                         <th width="5%"><span>회원번호</span></th>
                         <th width="10%"><span>회원아이디</span></th>
@@ -53,7 +53,7 @@
                         	${adminOrderListPage.m_id}
                         	<input type="hidden" name="m_id" id="m_id" value="${adminOrderListPage.m_id}">
                         </td>
-                        <td>${adminOrderListPage.membership_name}</td>
+                        
                         <td>${adminOrderListPage.p_name}</td>
                         <td>${adminOrderListPage.order_price}</td>
                         <td><fmt:formatDate value="${adminOrderListPage.order_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
@@ -70,7 +70,7 @@
         <br><br>
         
         <!-- 페이징처리 -->
-    <%--    <div class="pageInfo">
+       <div class="pageInfo">
 		
 			<c:if test="${pageMaker.prev}">
 				<li><a href="${pageMaker.startPage -1}">이전</a></li>
@@ -96,6 +96,6 @@
 			
 			<input type="hidden" name="type" value="${pageMaker.cri.type }">
 			<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-		</form> --%>
+		</form> 
 		
     </div>
