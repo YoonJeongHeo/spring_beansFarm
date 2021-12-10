@@ -35,10 +35,7 @@
                                 <td width="15%"><fmt:formatDate value="${myAllOrderHistory.order_reg_date}" pattern="yyyy-MM-dd" /></td>
                                 <td width="15%">${myAllOrderHistory.order_no}</td> 
                                 <td width="25%" colspan="2">
-	                                 <ul>
-	                                  	<li><fmt:formatNumber value="${myAllOrderHistory.order_price}" pattern="#,###" /></li>
-	                                  	<li>${myAllOrderHistory.product_quantity}</li>
-	                                 </ul>
+                                	<fmt:formatNumber value="${myAllOrderHistory.order_price}" pattern="#,###" /> (${myAllOrderHistory.product_quantity1})
                             	</td>
                                 <td width="20%">
                                  <form action="/mypageviews/myReviewList/reviewWriteForm_view" method="post" id="reviewChk" class="reviewChk">

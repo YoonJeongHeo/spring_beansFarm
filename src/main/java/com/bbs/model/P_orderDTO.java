@@ -34,5 +34,4 @@ public class P_orderDTO {
 	private String membership_name;	
 	private String m_email;	
 	
-	
 }

@@ -24,7 +24,7 @@ public class ProductDTO {
 	private Date order_reg_date;
 	private Long order_no;
 	private int order_price;
-	private int product_quantity;
+	private int product_quantity1;
 	
 	// 제품 상세페이지 내에 리뷰 보이기 위해 필요한 변수(컬럼) 추가.
 	private String r_thumbnail;
