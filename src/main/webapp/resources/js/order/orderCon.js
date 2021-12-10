@@ -51,13 +51,13 @@ $(function(){
 			// check_module();
 			
 			// 주문변호
-			 var order_no = $("#order_no").val();
+			 var order_id = $("#order_no").val();
 			 var today = new Date();
 			 var month = ('0' + (today.getMonth() + 1)).slice(-2);
 			 var day = ('0' + today.getDate()).slice(-2);
 			 var date = month + day;
 			
-	 		 order_no = order_no + date;
+	 		 order_id = order_id + date;
 			
 			// 회원정보
 			 var recipient_name = $("#recipient_name").val(); // 받는사람
@@ -66,15 +66,12 @@ $(function(){
 			 var detailed_address = $("#detailed_address").val(); // 상세즈소
 		     var addr =  address + detailed_address// 통합주소	 
 			 var recipient_phone = $("#recipient_phone").val(); // 연락처
-			 			 
-			//주문금액
-			 var totalPrice = $("#totalPrice").val();
 			
 			//제품정보
-			var p_noArr = new Array();
+			var cart_noArr = new Array();
 			
-			$("input[name=p_noList]").each(function(i, item){
-			   	p_noArr.push($(item).val());
+			$("input[name=cart_noList]").each(function(i, item){
+			   	cart_noArr.push($(item).val());
 		   	});
 			
 			$.ajax({
@@ -82,14 +79,13 @@ $(function(){
 		        type :'POST',
 		        dataType: 'json',
 				data : {
-						order_no:order_no,
+						order_id:order_id,
 						recipient_name:recipient_name,
 						postnum:postnum,
 						address:address,
 						detailed_address:detailed_address,
 						recipient_phone:recipient_phone,
-						totalPrice:totalPrice,
-						p_noArr:p_noArr
+						cart_noArr:cart_noArr
 						
 						},
 				traditional:true,

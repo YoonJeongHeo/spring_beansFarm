@@ -8,7 +8,9 @@ import lombok.Data;
 
 @Data
 public class P_orderDTO {
-	private String order_no;
+	private List<Long> cart_noArr;
+	private Long order_no;
+	private String order_id;
 	private Long m_no;
 	private Long c_no;
 	private String postnum;
@@ -19,7 +21,6 @@ public class P_orderDTO {
 	private int point_use;
 	private int order_price;
 	private Timestamp order_reg_date;
-	private List<P_orderDTO> p_noList;
 	private Long p_no;
 	private int op_no1;
 	private int option_quantity1;

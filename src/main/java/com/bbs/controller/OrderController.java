@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bbs.model.AddressDTO;
 import com.bbs.model.CartDTO;
+import com.bbs.model.CategoryDTO;
 import com.bbs.model.MemberDTO;
 import com.bbs.model.POptionDTO;
 import com.bbs.model.P_orderDTO;
@@ -51,6 +52,9 @@ public class OrderController {
 	
 	@Autowired
 	private AddressService addressService;
+	
+	@Autowired
+	private p_orderService orderService;
 	
 	
 	//주문 페이지 열기
@@ -137,14 +141,14 @@ public class OrderController {
 	@ResponseBody
 	public String orderInsert(
 			HttpServletRequest request,
-			@RequestParam("order_no") String order_no,
+			@RequestParam("order_id") String order_id,
 			@RequestParam("recipient_name") String recipient_name,
 			@RequestParam("postnum") String postnum,
 			@RequestParam("address") String address,
 			@RequestParam("detailed_address") String detailed_address,
 			@RequestParam("recipient_phone") String recipient_phone,
-			@RequestParam("totalPrice") String totalPrice,
-			@RequestParam("p_noArr") List<String> p_noArr
+			
+			@RequestParam("cart_noArr") List<Long> cart_noArr
 			
 						
 			) {
@@ -154,16 +158,40 @@ public class OrderController {
 				
 		System.out.println("주문서 추가");
 		System.out.println("회원번호 : " + userNO);
-		System.out.println("주문번호 : " + order_no);
+		System.out.println("주문번호 : " + order_id);
 		System.out.println("받는사람 : " + recipient_name);
 		System.out.println("우편번호 : " + postnum);
 		System.out.println("기본주소 : " + address);
 		System.out.println("상세주소 : " + detailed_address);
 		System.out.println("연락처 : " + recipient_phone);
-		System.out.println("결재금액 : " + totalPrice);
-		System.out.println("제품번호 : " + p_noArr);
+		System.out.println("장바구니번호 : " + cart_noArr);
 		
+		P_orderDTO p_DTO = new P_orderDTO();
+		p_DTO.setCart_noArr(cart_noArr);
+		System.out.println(p_DTO);
 		
+		for(Long i : cart_noArr) {
+		CartDTO cartDTO = cartService.selectOne(i);
+		System.out.println(cartDTO);
+		}
+		
+		for(Long i : cart_noArr) {
+			p_DTO.setOrder_id(order_id);
+			p_DTO.setM_no(userNO);
+			p_DTO.setPostnum(postnum);
+			p_DTO.setAddress(address);
+			p_DTO.setDetailed_address(detailed_address);
+			p_DTO.setRecipient_name(recipient_name);
+			p_DTO.setRecipient_phone(recipient_phone);
+			
+			CartDTO cartDTO = cartService.selectOne(i);
+			p_DTO.setP_no(cartDTO.getP_no());
+			p_DTO.setOp_no1(cartDTO.getOp_no1());
+			p_DTO.setOption_quantity1(cartDTO.getOption_quantity1());
+			p_DTO.setOp_no2(cartDTO.getOp_no2());
+			p_DTO.setOrder_price(cartDTO.getOrder_price());
+			orderService.orderInsert(p_DTO);
+		}
 		
 		
 		

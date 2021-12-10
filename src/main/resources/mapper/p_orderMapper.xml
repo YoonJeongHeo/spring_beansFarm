@@ -4,8 +4,8 @@
 <mapper namespace="com.bbs.mapper.P_orderMapper">
 
 	<insert id="orderInsert">
-		insert into p_order(m_no, postnum, address, detailed_address, recipient_name, recipient_phone, order_price, p_no, op_no1, option_quantity1, op_no2)
-    	values(#{m_no}, #{postnum}, #{address}, #{detailed_address}, #{recipient_name}, #{recipient_phone}, #{order_price}, #{p_no}, #{op_no1}, #{option_quantity1}, #{op_no2})
+		insert into p_order(order_id, m_no, postnum, address, detailed_address, recipient_name, recipient_phone, order_price, p_no, op_no1, option_quantity1, op_no2)
+    	values(#{order_id}, #{m_no}, #{postnum}, #{address}, #{detailed_address}, #{recipient_name}, #{recipient_phone}, #{order_price}, #{p_no}, #{op_no1}, #{option_quantity1}, #{op_no2})
 	</insert>
 
 
