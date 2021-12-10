@@ -6,66 +6,6 @@ create database if not exists beansFarm;
 
 use beansFarm;
 
--- 회원
-DROP TABLE IF EXISTS beansFarm.member RESTRICT;
-
--- 맴버쉽
-DROP TABLE IF EXISTS beansFarm.membership RESTRICT;
-
--- 쿠폰
-DROP TABLE IF EXISTS beansFarm.coupon RESTRICT;
-
--- QnA
-DROP TABLE IF EXISTS beansFarm.qna RESTRICT;
-
--- 제품
-DROP TABLE IF EXISTS beansFarm.product RESTRICT;
-
--- 원산지
-DROP TABLE IF EXISTS beansFarm.origin RESTRICT;
-
--- 카테고리
-DROP TABLE IF EXISTS beansFarm.category RESTRICT;
-
--- 상품옵션
-DROP TABLE IF EXISTS beansFarm.p_option RESTRICT;
-
--- 옵션분류
-DROP TABLE IF EXISTS beansFarm.option_classification RESTRICT;
-
--- 제품상세페이지
-DROP TABLE IF EXISTS beansFarm.product_details_page RESTRICT;
-
--- 장바구니
-DROP TABLE IF EXISTS beansFarm.cart RESTRICT;
-
--- 후기
-DROP TABLE IF EXISTS beansFarm.review RESTRICT;
-
--- 문의분류
-DROP TABLE IF EXISTS beansFarm.inquiry_classification RESTRICT;
-
--- FAQ
-DROP TABLE IF EXISTS beansFarm.faq RESTRICT;
-
--- 관리자
-DROP TABLE IF EXISTS beansFarm.manager RESTRICT;
-
--- 공지사항
-DROP TABLE IF EXISTS beansFarm.notice RESTRICT;
-
--- 주문서
-DROP TABLE IF EXISTS beansFarm.p_order RESTRICT;
-
--- 주소
-DROP TABLE IF EXISTS beansFarm.address RESTRICT;
-
--- 반품
-DROP TABLE IF EXISTS beansFarm.p_return RESTRICT;
-
--- 반품사유
-DROP TABLE IF EXISTS beansFarm.return_reason RESTRICT;
-
 -- 빈즈팜
 DROP SCHEMA IF EXISTS beansFarm;
 
@@ -327,7 +267,7 @@ ALTER TABLE beansFarm.cart
 CREATE TABLE beansFarm.review (
 	r_no        BIGINT        NOT NULL, -- 후기번호
 	m_no        BIGINT        NOT NULL, -- 회원번호
-	order_no    VARCHAR(200)  NOT NULL, -- 주문번호
+	order_no    BIGINT        NOT NULL, -- 주문번호
 	r_title     VARCHAR(40)   NOT NULL, -- 후기제목
 	r_content   VARCHAR(1024) NOT NULL, -- 후기내용
 	r_photo     VARCHAR(200)  NULL,     -- 후기사진
@@ -437,7 +377,8 @@ ALTER TABLE beansFarm.notice
 
 -- 주문서
 CREATE TABLE beansFarm.p_order (
-	order_no         VARCHAR(200) NOT NULL, -- 주문번호
+	order_no         BIGINT       NOT NULL, -- 주문번호
+	order_id         VARCHAR(200) NOT NULL, -- 주문아이디
 	m_no             BIGINT       NOT NULL, -- 회원번호
 	c_no             BIGINT       NULL,     -- 쿠폰번호
 	postnum          VARCHAR(7)   NOT NULL, -- 우편번호
@@ -463,7 +404,7 @@ ALTER TABLE beansFarm.p_order
 		);
 
 ALTER TABLE beansFarm.p_order
-	MODIFY COLUMN order_no VARCHAR(200) NOT NULL AUTO_INCREMENT;
+	MODIFY COLUMN order_no BIGINT NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE beansFarm.p_order
 	AUTO_INCREMENT = 0;
@@ -497,7 +438,7 @@ ALTER TABLE beansFarm.address
 -- 반품
 CREATE TABLE beansFarm.p_return (
 	return_no        INT           NOT NULL, -- 반품번호
-	order_no         VARCHAR(200)  NULL,     -- 주문번호
+	order_no         BIGINT        NULL,     -- 주문번호
 	return_reason_no INT           NULL,     -- 반품사유번호
 	return_content   VARCHAR(1024) NOT NULL  -- 반품내용
 );
