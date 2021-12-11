@@ -3,6 +3,7 @@ package com.bbs.service;
 import java.util.List;
 
 import com.bbs.model.P_orderDTO;
+import com.bbs.page.Criteria;
 
 public interface p_orderService {
 
@@ -10,7 +11,9 @@ public interface p_orderService {
 
 	public List<P_orderDTO> adminMainOH();
 
-	public List<P_orderDTO> adminOrderListPage();
+	public List<P_orderDTO> adminOrderListPage(Criteria cri);
+
+	public int getTotal(Criteria cri);
 
 	
 

@@ -20,8 +20,6 @@ import com.bbs.model.CouponDTO;
 import com.bbs.model.Inquiry_classificationDTO;
 import com.bbs.model.MemberDTO;
 import com.bbs.model.P_orderDTO;
-import com.bbs.page.AdminCriteria;
-import com.bbs.page.AdminViewPage;
 import com.bbs.page.Criteria;
 import com.bbs.page.ViewPage;
 import com.bbs.service.AdminService;
@@ -223,14 +221,23 @@ public class AdminController {
 	
 	//관리자 주문리스트 페이지 이동
 	@GetMapping("/orderList/orderList_view")
-	public String adminOrderList_view(Model model) {
+	public String adminOrderList_view(Model model, Criteria cri) {
 		
-		System.out.println("======================1");
+		
+		String type = cri.getType();
+		String keyWord = cri.getKeyword();
+		System.out.println("검색한 type : " + type);
+		System.out.println("검색한 내용 : " + keyWord);
+		
 		System.out.println("관리자 주문리스트 페이지 이동");
 		
-		List<P_orderDTO> adminOrderListPage = p_orderService.adminOrderListPage();
+		List<P_orderDTO> adminOrderListPage = p_orderService.adminOrderListPage(cri);
 		model.addAttribute("adminOrderListPage",adminOrderListPage);
 		
+		int total = p_orderService.getTotal(cri);
+		ViewPage vp = new ViewPage(cri, total);
+		model.addAttribute("pageMaker", vp);
+		System.out.println("카운트 된 수 : " + total);
 		System.out.println(adminOrderListPage);
 		
 		return "/adminviews/orderList/orderList_view";
@@ -532,5 +539,25 @@ public class AdminController {
 		return "/adminviews/adminProductManage_view";
 	}
 
+	// 관리자 페이지 제품주문사항 변경
+	@PostMapping("/orderUpdateAjax")
+	@ResponseBody
+	public String orderUpdateAjax(@RequestParam("order_no") Long order_no, HttpServletRequest request) {
+		
+		System.out.println("탓냐?");
+		
+		P_orderDTO orderDTO = new P_orderDTO();
+		
+		HttpSession session = request.getSession();
+		Long m_no = (Long)session.getAttribute("userNO");
+		
+		orderDTO.setM_no(m_no);
+		orderDTO.setOrder_no(order_no);
+		
+		System.out.println(orderDTO);
+		
+		return "aaaa";
+	}
+	
 	
 }

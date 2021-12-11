@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.bbs.mapper.P_orderMapper;
 import com.bbs.model.P_orderDTO;
+import com.bbs.page.Criteria;
 
 @Service
 public class p_orderServiceImpl implements p_orderService{
@@ -27,9 +28,15 @@ public class p_orderServiceImpl implements p_orderService{
 	}
 
 	@Override
-	public List<P_orderDTO> adminOrderListPage() {
+	public List<P_orderDTO> adminOrderListPage(Criteria cri) {
 		
-		return p_orderMapper.adminOrderListPage();
+		return p_orderMapper.adminOrderListPage(cri);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		
+		return p_orderMapper.getTotal(cri);
 	}
 	
 	

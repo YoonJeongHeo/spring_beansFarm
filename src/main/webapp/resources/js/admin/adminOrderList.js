@@ -3,17 +3,18 @@ $(function() {
 
    
    // 검색기능
-   $("#searchBtn").on("click", function(){
-      var moveForm = $(".moveForm");
-      
-        
-      let type = $(".searchBox select").val();
-        let keyword = $("input[name='keyword']").val();
+   $(".orderSearchBtn").on("click", function(e){
+	
+	e.preventDefault();
+    var moveForm = $(".moveForm");
+       
+    let type = $(".searchBox select").val();
+    let keyword = $("input[id='keyword']").val();
 
-      alert("type : " + type);
-      alert("keyword : " + keyword);
+    alert("type : " + type);
+    alert("keyword : " + keyword);
       
-      if(!type){
+   		if(!type){
             alert("검색 종류를 선택하세요.");
             return false;
         }
@@ -24,10 +25,10 @@ $(function() {
         }   
 
       moveForm.find("input[name='type']").val(type);
-        moveForm.find("input[name='keyword']").val(keyword);
-        moveForm.find("input[name='pageNum']").val(1).attr("href");
-      moveForm.attr("action", "/adminviews/adminMemberList_view");
-        moveForm.submit();
+      moveForm.find("input[name='keyword']").val(keyword);
+      moveForm.find("input[name='pageNum']").val(1).attr("href");
+      moveForm.attr("action", "/adminviews/orderList/orderList_view");
+      moveForm.submit();
     });
 
 
@@ -38,7 +39,7 @@ $(function() {
       
       e.preventDefault();
       moveForm.find("input[name = 'pageNum']").val($(this).attr("href"));
-      moveForm.attr("action", "/adminviews/adminMemberList_view");
+      moveForm.attr("action", "/adminviews/orderList/orderList_view");
       moveForm.submit();
       
       
@@ -75,9 +76,55 @@ $(function() {
       
     })
 
-
-
+	
+	
+	$(".orderUpdateBtn").click(function(){
+	
+	  var order_no = $(this).closest('tr').find('.orderUpdateBtn').val();
+		alert("업데이트버튼" + order_no);
+		
+		$.ajax({
+		        url: '/adminviews/orderUpdateAjax',
+		        type: 'POST',
+				dataType : 'json',
+		        data: {
+					
+					order_no:order_no
+					
+					},
+					
+				success : function(result) {
+				
+					alert(result);
+					
+				}
+				
+		})
+		
+	});
    
+
+   $(".orderDeleteBtn").click(function(){
+  var orderDeleteBtn = $(this).closest('tr').find('.orderDeleteBtn').val();
+
+		alert("딜리트버튼" + orderDeleteBtn);
+		
+		$.ajax({
+		
+		        url: '/adminviews/orderDeleteAjax',
+		        type: 'POST',
+				dataType : 'json',
+		        data: {order_no:order_no},
+				success : function(result) {
+					alert(result);
+					if(result == 0){
+						$(".reviewChk").submit();
+					}else{
+						alert("해당상품에 대한 리뷰를 작성하셨습니다.");
+					}
+				}
+		})
+	});
    
    
 	
