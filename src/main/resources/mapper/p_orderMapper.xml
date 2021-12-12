@@ -31,24 +31,6 @@
 		limit #{skip}, #{amount}
 	</select>
 	
-	<select id="getTotal" resultType="int">
-		select count(*) from member m join p_order po on m.m_no = po.m_no join product p on po.p_no = p.p_no
-		
-		<if test="keyword != null">
-					
-			<choose>
-			
-				<when test="type == 's_id'">
-				
-					and m.m_id like concat('%',#{keyword},'%')
-				   	 
-				</when>
-			    
-			</choose>
-			
-		</if>
-	</select>
-	
 	<select id="myOrderList" resultType="com.bbs.model.P_orderDTO">
 		select * from member m join p_order po on m.m_no = po.m_no join product p 
 		on po.p_no = p.p_no where m.m_no = #{m_no}
