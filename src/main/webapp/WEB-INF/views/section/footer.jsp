@@ -10,7 +10,7 @@
             <li>Team leader | 허윤정, 백승엽 </li>
             <li>Team member | 안성용, 석주명, 권민성, 최명기</li>
             <li><a href="https://github.com/YOONJEONGH/spring_beansFarm">
-	            	https://github.com/YOONJEONGH/spring_beansFarm</li>
+	            	https://github.com/YOONJEONGH/spring_beansFarm</a></li>
         </ul>
     </div>
     
@@ -21,7 +21,7 @@
 	            <li>Team leader | 허윤정, 백승엽 </li>
 	            <li>Team member | 안성용, 석주명, 권민성, 최명기</li>
 	            <li><a href="https://github.com/YOONJEONGH/spring_beansFarm">
-	            	https://github.com/YOONJEONGH/spring_beansFarm</li>
+	            	https://github.com/YOONJEONGH/spring_beansFarm</a></li>
         	</ul>
 	    </div>
 	</div>
