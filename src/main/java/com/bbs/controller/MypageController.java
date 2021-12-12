@@ -86,8 +86,7 @@ public class MypageController {
 		
 		System.out.println("주문내역 조회");
 		
-		List<ProductDTO> myOrderHistory = orderHistoryService.myOrderHistory(m_no);
-		
+		List<P_orderDTO> myOrderHistory = orderService.myOrderList(m_no);
 		
 		model.addAttribute("myOrderHistory", myOrderHistory);
 		
@@ -112,7 +111,8 @@ public class MypageController {
 		System.out.println("세션에 저장되어있는 회원 번호 : " + m_no);
 		
 		cri.setM_no(m_no);
-		List<ProductDTO> myAllOrderHistory = orderHistoryService.myAllOrderHistory(cri);
+//		List<ProductDTO> myAllOrderHistory = orderHistoryService.myAllOrderHistory(cri);
+		List<P_orderDTO> myAllOrderHistory = orderService.myAllOrderList(m_no, cri);
 		
 		model.addAttribute("myAllOrderHistory", myAllOrderHistory);
 		

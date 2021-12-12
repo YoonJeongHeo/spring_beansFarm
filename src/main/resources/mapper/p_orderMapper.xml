@@ -32,9 +32,11 @@
 	</select>
 	
 	<select id="myOrderList" resultType="com.bbs.model.P_orderDTO">
-		select * from member m join p_order po on m.m_no = po.m_no join product p 
-		on po.p_no = p.p_no where m.m_no = #{m_no}
+		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no}
 	</select>
 	
+	<select id="myAllOrderList" resultType="com.bbs.model.P_orderDTO">
+		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no} limit 0, 10
+	</select>
 	
 </mapper>

@@ -35,12 +35,13 @@
 							<c:forEach var="myOrderHistory" items="${myOrderHistory}">
 		             			
 				                <tr class="mypageTableHo">
-								<td width="10%"> <a href="/product/product_details/pdDetailsCon_view?p_no=${myOrderHistory.p_no}"> <img src="src=/upload/product/${myOrderHistory.p_image}" width="150px" height="150px"></a> </td>
+								<td width="10%"> <a href="/product/product_details/pdDetailsCon_view?p_no=${myOrderHistory.p_no}">
+												<img src="/upload/product/${myOrderHistory.p_image}" width="150px" height="150px"></a> </td>
 								<td width="10%">${myOrderHistory.p_name}</td>
                                 <td width="15%"><fmt:formatDate value="${myOrderHistory.order_reg_date}" pattern="yyyy-MM-dd" /></td>
                                 <td width="15%">${myOrderHistory.order_no}</td> 
                                 <td width="25%" colspan="2">
-                                	<fmt:formatNumber value="${myOrderHistory.order_price}" pattern="#,###" /> (${myOrderHistory.product_quantity1})
+                                	<fmt:formatNumber value="${myOrderHistory.order_price}" pattern="#,###" /> (${myOrderHistory.option_quantity1})
                             	</td>
                                 <td width="20%">
                                  <form action="/mypageviews/myReviewList/reviewWriteForm_view" method="post" id="reviewChk" class="reviewChk">

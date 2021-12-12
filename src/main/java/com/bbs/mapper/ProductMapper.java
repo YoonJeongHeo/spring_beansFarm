@@ -13,10 +13,15 @@ public interface ProductMapper {
 	public void insert(ProductDTO dto);
 	
 	public List<ProductDTO> selectByAll(Criteria cri);
+	
 	public List<ProductDTO> selectByAllPage(ProductCriteria cri);
+	
 	public List<ProductDTO> selectByName(String p_name);
+	
 	public List<ProductDTO> selectByOrigin(String origin_name);
+	
 	public List<ProductDTO> selectByAllDetails();
+	
 	public ProductDTO selectByPNo(long p_no);
 	
 	public void update(ProductDTO dto);

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.bbs.mapper.P_orderMapper;
 import com.bbs.model.P_orderDTO;
 import com.bbs.page.Criteria;
+import com.bbs.page.MypageCriteria;
 
 @Service
 public class p_orderServiceImpl implements p_orderService{
@@ -43,6 +44,12 @@ public class p_orderServiceImpl implements p_orderService{
 	public List<P_orderDTO> myOrderList(Long m_no) {
 		
 		return p_orderMapper.myOrderList(m_no);
+	}
+
+	@Override
+	public List<P_orderDTO> myAllOrderList(Long m_no, MypageCriteria cri) {
+		
+		return p_orderMapper.myAllOrderList(m_no, cri);
 	}
 	
 	
