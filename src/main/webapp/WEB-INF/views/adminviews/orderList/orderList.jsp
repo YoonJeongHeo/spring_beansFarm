@@ -12,7 +12,7 @@
         <h1>제품 주문 현황</h1>
 
         <br><br>
-        
+
 		<!-- 검색기능 -->
          <div class="searchBox">
             <select name="type" id="type">
@@ -21,7 +21,7 @@
             </select>
             <input type="text" name="keyword" id="keyword" placeholder="검색할 내용을 입력하세요" 
             		value="${pageMaker.cri.keyword}">
-            <button id="searchBtn">검색</button>
+            <button type="button" class="orderSearchBtn" style="height: 36.5px; width: 50px">검색</button>
         </div> 
         
         <br><br><br>
@@ -31,14 +31,14 @@
                 <table id="adminTbl">
                     <tr>
                         <th width="2%"><input type='checkbox' name='orderAll' id='orderAll'/></th>
-                        <th width="3%"><span>주문번호</span></th>
-                        <th width="5%"><span>회원번호</span></th>
+                        <th width="8%"><span>주문번호</span></th>
+                        
                         <th width="10%"><span>회원아이디</span></th>
-                        <th width="40%"><span>주문상품</span></th>
+                        <th width="35%"><span>주문상품</span></th>
                         <th width="10%"><span>주문금액</span></th>                        
                         <th width="15%"><span>주문일</span></th>
                         <th width="5%"><span>환불여부</span></th>
-                        <th width="10%"><span>결제취소</span></th>
+                        <th width="15%"><span>결재사항변경</span></th>
                     </tr>
                    
                     <c:forEach var="adminOrderListPage" items="${adminOrderListPage}">
@@ -48,7 +48,7 @@
                         	${adminOrderListPage.order_no}
                         	<input type="hidden" name="order_no" id="order_no" value="${adminOrderListPage.order_no}">
                         </td>
-                        <td>${adminOrderListPage.m_no}</td>
+                        
                         <td>
                         	${adminOrderListPage.m_id}
                         	<input type="hidden" name="m_id" id="m_id" value="${adminOrderListPage.m_id}">
@@ -59,7 +59,8 @@
                         <td><fmt:formatDate value="${adminOrderListPage.order_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
                         <td>${adminOrderListPage.p_return}</td>
                         <td>
-                        	<button type="button" class="orderDelete">결제취소</button>
+                        	<button type="button" value="${adminOrderListPage.order_no}" class="orderUpdateBtn w-btn-outline w-btn-skin-outline">결제취소</button>
+                        	<button type="button" value="${adminOrderListPage.order_no}" class="orderDeleteBtn w-btn-outline w-btn-yellow-outline">완전삭제</button>
                         </td>
                     </tr>
                     </c:forEach>

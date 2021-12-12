@@ -146,3 +146,45 @@
     text-decoration: none;
     color: red;
 }
+
+/* =============버튼============= */
+
+.w-btn-skin-outline {
+    border: 3px solid #f8e6e0;
+    color: #6e6e6e;
+}
+
+.w-btn-yellow-outline {
+    border: 3px solid #fce205;
+    color: #6e6e6e;
+}
+
+.w-btn-skin-outline:hover {
+    background-color: #f8e6e0;
+    color: #6e6e6e;
+}
+
+.w-btn-yellow-outline:hover {
+    background-color: #fce205;
+    color: #6e6e6e;
+}
+
+.w-btn-outline:hover {
+    letter-spacing: 2px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.w-btn-outline:active {
+    transform: scale(1);
+}
+
+.w-btn-outline {
+    position: relative;
+    
+    border-radius: 15px;
+    
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
