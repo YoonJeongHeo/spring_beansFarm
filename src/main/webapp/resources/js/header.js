@@ -40,6 +40,12 @@ $(function(){
 	});
 	
 	
+	//검색창 닫기
+	$("#searchFormx").on("click", function(){
+		location.reload();
+	});
+	
+	
 	//검색기능
 	$("#searchAction").click(function(){	
 		
