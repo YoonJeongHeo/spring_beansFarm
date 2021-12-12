@@ -1,12 +1,14 @@
 @charset "UTF-8";
 
-
-
-
-
 #reviewWriteFormCenter{
-	display: inline-block;
-	margin-right: -30rem;
+	margin: 0 auto;
+	margin-top: 5%;
+	min-height: 80vw;
+	height : auto;
+}
+
+#reviewFinalCheck {
+	padding: 1% 2%;
 }
 
 .reivewtable{

@@ -2,7 +2,6 @@ $(function(){
 	$(".reviewBtn").on("click",function(){
 	
 		var order_no = $(this).closest('td').find('.order_no').val();
-		alert(order_no);
 		
 		$.ajax({
 		
@@ -11,7 +10,6 @@ $(function(){
 				dataType : 'json',
 		        data: {order_no:order_no},
 				success : function(result) {
-					alert(result);
 					if(result == 0){
 					
 						$(".reviewChk").submit();
@@ -50,7 +48,6 @@ $(function(){
 			    		}else {
 	
 						alert("취소되었습니다!");
-						alert(r_no);
 						event.preventDefault();
 		     			return false;
 			      }
@@ -68,11 +65,9 @@ $(function(){
     });
 
 	$(".iBar").click(function() {
-		alert("!!");
 	});
 	
 	$(".iBar").click(function() {
-		alert("!!");
 	});
 
 	

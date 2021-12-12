@@ -10,7 +10,7 @@
                 <ul>
                 
                 	<!-- 경로입력 -->
-                	<li class="mypage_view"><a href="/mypageviews/mypage_view">마이 페이지</a></li>
+                	<li class="mypage_view"><a href="/mypageviews/mypage/mypage_view">마이 페이지</a></li>
                     <li class="myShoppingList_view"><a href="/mypageviews/myShoppingList/myShopping_view">주문 내역 조회</a></li>
                     <li class="mycoco_view"><a href="/mypageviews/myCucuList/myCucu_view">내 쿠폰</a></li>
                     <li class="myReview_view"><a href="/mypageviews/myReviewList/myReview_view">내 후기</a></li>

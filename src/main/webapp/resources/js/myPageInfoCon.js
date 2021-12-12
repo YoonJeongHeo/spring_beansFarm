@@ -90,17 +90,21 @@ $(function(){
 	// 회원삭제
 	$("#memberdeleteBtn").on("click", function(){
 		var m_id = $("#m_id").val();
-		$.ajax({
-			url:'/memberloginviews/memberdelete',
-			type:'POST',
-			data : {m_id:m_id},
-			success : function(data) {
-				alert(data);
-				alert(m_id + "님의 회원이 탈퇴 되었습니다");
-				$(location).attr("href", "/");
-
-			}
-		})
+		if(confirm(m_id + "님 정말로 탈퇴하시겠습니까?")){
+			$.ajax({
+				url:'/memberloginviews/memberdelete',
+				type:'POST',
+				data : {m_id:m_id},
+				success : function(data) {
+					alert(m_id + "님의 회원이 탈퇴 되었습니다");
+					$(location).attr("href", "/");
+	
+				}
+			})
+		
+		}else {
+			location.reload();
+		}
 	});
 	
 	
