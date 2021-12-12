@@ -28,6 +28,8 @@
 				<li class="list"><a href="/adminviews/memberShip/memberShip_view">회원멤버쉽 관리</a></li>
 				<li class="list"><a href="/adminviews/coupon/couponGiftAll_view">회원 쿠폰 지급</a></li>
 				<li class="list"><a href="/adminviews/ic_managed">고객센터 관리</a></li>
+				<li class="list"><a href="https://admin.iamport.kr">결제시스템 관리</a></li>
+				
 			</ul>
 		</div>
 		                

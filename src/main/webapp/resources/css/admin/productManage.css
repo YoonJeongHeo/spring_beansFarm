@@ -1,15 +1,22 @@
 @charset "UTF-8";
 
 #con2 {
-    /* border: 1px solid blue; */
-    width: 90%;
+    width: 100%;
     min-height : 80vw;
     height : auto;
     margin-bottom : 5rem;
   	display: flex;
-    justify-content: left;
-    margin-left : 5rem;
-    text-align: center;
+  	text-align: center;
+   
+}
+
+#con3 {
+    width: 90%;
+    margin-left : 1%;
+    min-height : 80vw;
+    height : auto;
+    margin-bottom : 5rem;
+  	text-align: center;
    
 }
 
@@ -19,12 +26,11 @@
 }
 
 .opDetail {
-	
     border: 2px solid gray;
-    width: 57%;
-    margin: 2%;
-   
-    
+    width: 53%;
+    margin-left: 1%;
+    margin-right: 1%;
+   	padding-bottom: 1%;
 }
 .opDetail div{
 	display: inline-block;
@@ -32,8 +38,8 @@
 
 .pOption {
     border: 2px solid gray;
-    width: 43%;
-    margin: 2%;
+    width: 45%;
+    padding-bottom: 1%;
 }
 .pOption div{
 	margin-left: 1%;
