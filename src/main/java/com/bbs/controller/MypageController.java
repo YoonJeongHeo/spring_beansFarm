@@ -29,6 +29,7 @@ import com.bbs.service.CouponService;
 import com.bbs.service.MemberService;
 import com.bbs.service.OrderHistoryService;
 import com.bbs.service.ReviewService;
+import com.bbs.service.p_orderService;
 import com.bbs.utils.UploadFileUtils;
 
 
@@ -47,6 +48,10 @@ public class MypageController {
 	
 	@Autowired
 	private OrderHistoryService orderHistoryService;
+	
+	@Autowired
+	private p_orderService orderService;
+	
 	
 	@Resource(name="uploadPath")
 	private String uploadPath;

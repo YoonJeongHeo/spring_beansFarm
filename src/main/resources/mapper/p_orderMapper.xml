@@ -16,4 +16,9 @@
 		select * from member m join p_order po on m.m_no = po.m_no join product p on po.p_no = p.p_no
 	</select>
 	
+	<select id="myOrderList" resultType="com.bbs.model.P_orderDTO">
+		select * from member m join p_order po on m.m_no = po.m_no join product p 
+		on po.p_no = p.p_no where m.m_no = #{m_no}
+	</select>
+	
 </mapper>

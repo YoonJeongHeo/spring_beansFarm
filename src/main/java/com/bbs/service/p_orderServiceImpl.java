@@ -31,6 +31,12 @@ public class p_orderServiceImpl implements p_orderService{
 		
 		return p_orderMapper.adminOrderListPage();
 	}
+
+	@Override
+	public List<P_orderDTO> myOrderList(Long m_no) {
+		
+		return p_orderMapper.myOrderList(m_no);
+	}
 	
 	
 

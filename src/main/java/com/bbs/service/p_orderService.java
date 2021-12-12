@@ -12,6 +12,8 @@ public interface p_orderService {
 
 	public List<P_orderDTO> adminOrderListPage();
 
+	public List<P_orderDTO> myOrderList(Long m_no);
+
 	
 
 }
