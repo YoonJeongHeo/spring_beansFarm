@@ -102,7 +102,7 @@
                         
                         <button type="button" id="m_join" >가입하기</button>
                         <button type="button" id="homeBtn" onclick = "location.href = '/' ">홈</button>
-                        <input type="reset" name="m_joinreset" id="m_joinreset" value="다시작성">
+                        <input type="button" name="m_joinreset" id="m_joinreset" value="다시작성">
                     </td>
                 </tr>
             </table>

@@ -252,6 +252,11 @@ $(function() {
 		}
 		
 	});
+	
+	//다시작성
+	$("#m_joinreset").on("click",function(){
+		location.reload();
+	});
 
 
 // 널 체크 함수
