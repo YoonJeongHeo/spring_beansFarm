@@ -81,6 +81,9 @@ $(function() {
 	$(".orderUpdateBtn").click(function(){
 	
 	  var order_no = $(this).closest('tr').find('.orderUpdateBtn').val();
+	  var p_return = $(this).closest('tr').find('.orderUpdateBtn').val();
+		
+		
 		alert("업데이트버튼" + order_no);
 		
 		$.ajax({
@@ -109,21 +112,7 @@ $(function() {
 
 		alert("딜리트버튼" + orderDeleteBtn);
 		
-		$.ajax({
-		
-		        url: '/adminviews/orderDeleteAjax',
-		        type: 'POST',
-				dataType : 'json',
-		        data: {order_no:order_no},
-				success : function(result) {
-					alert(result);
-					if(result == 0){
-						$(".reviewChk").submit();
-					}else{
-						alert("해당상품에 대한 리뷰를 작성하셨습니다.");
-					}
-				}
-		})
+	
 	});
    
    
