@@ -88,7 +88,7 @@
 							${fixList.notice_title}</a>
 						</td>
 						<td data-title="날짜" class="hide_td">
-							<fmt:formatDate value="${fixList.notice_reg_date}" pattern="yyyy.MM.dd"/>
+							<fmt:formatDate value="${fixList.notice_reg_date}" pattern="yyyy/MM/dd"/>
 						</td>
 						<td data-title="조회" class="hide_td">${fixList.notice_view_count}</td>
 					</tr>
