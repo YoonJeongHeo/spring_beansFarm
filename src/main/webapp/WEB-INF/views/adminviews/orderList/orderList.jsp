@@ -57,7 +57,7 @@
                         <td>${adminOrderListPage.p_name}</td>
                         <td>${adminOrderListPage.order_price}</td>
                         <td><fmt:formatDate value="${adminOrderListPage.order_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
-                        <td>${adminOrderListPage.p_return}</td>
+                        <td>${adminOrderListPage.p_return} <input type="text" value="${adminOrderListPage.p_return}"> </td>
                         <td>
                         	<button type="button" value="${adminOrderListPage.order_no}" class="orderUpdateBtn w-btn-outline w-btn-skin-outline">결제취소</button>
                         	<button type="button" value="${adminOrderListPage.order_no}" class="orderDeleteBtn w-btn-outline w-btn-yellow-outline">완전삭제</button>
