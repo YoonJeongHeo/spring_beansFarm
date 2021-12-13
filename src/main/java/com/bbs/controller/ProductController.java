@@ -24,7 +24,7 @@ public class ProductController {
 
 //	전체제품 페이지로 이동
 	@GetMapping("/product_view")
-	public String product_view(Model model, ProductCriteria cri ) {
+	public String product_view(Model model, ProductCriteria cri) {
 		List<ProductDTO>productList = product.selectByAllPage(cri);
 		model.addAttribute("productList", productList);
 		

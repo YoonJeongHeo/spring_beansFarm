@@ -12,11 +12,11 @@
 
 
 -- 멤버쉽
-insert into membership values(1, 'WHITE', 1);
-insert into membership values(2, 'SILVER', 3);
-insert into membership values(3, 'GOLD', 5);
-insert into membership values(4, 'VIP', 7);
-insert into membership values(5, 'VVIP', 9);
+-- insert into membership values(1, 'WHITE', 1);
+-- insert into membership values(2, 'SILVER', 3);
+-- insert into membership values(3, 'GOLD', 5);
+-- insert into membership values(4, 'VIP', 7);
+-- insert into membership values(5, 'VVIP', 9);
 
 -- 문의분류
 insert into inquiry_classification
