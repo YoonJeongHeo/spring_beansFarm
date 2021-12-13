@@ -91,11 +91,36 @@ public class OrderController {
 		model.addAttribute("opList", opList);
 		
 		
-		System.out.println("주문페이로 가기");
+		System.out.println("주문페이지로 가기");
 		
 		return "/orderviews/orderCon_view";
 	}
 	
+	@PostMapping("/orderCon_view_buy_now")
+	public String orderCon1(Model model,HttpServletRequest request, CartDTO dto) {
+		System.out.println("주문 페이지 열기");
+		
+		HttpSession session = request.getSession();
+		Long m_no = (Long)session.getAttribute("userNO");
+		
+		List<ProductDTO> productList = productService.selectByAllDetails();
+		List<POptionDTO> opList = opService.selectByAll();
+		MemberDTO memberList = memberService.selectByOne(m_no);
+		List<AddressDTO> addressList = addressService.selectByOne(m_no);
+		ArrayList<CartDTO> cartList = new ArrayList<>();
+		
+		cartList.add(dto);
+		
+		model.addAttribute("memberList", memberList);
+		model.addAttribute("addressList", addressList);
+		model.addAttribute("cartList", cartList);
+		model.addAttribute("productList", productList);
+		model.addAttribute("opList", opList);
+		
+		System.out.println("주문페이지로 가기");
+		
+		return "/orderviews/orderCon_view";
+	}
 	
 	
 	//이용약관

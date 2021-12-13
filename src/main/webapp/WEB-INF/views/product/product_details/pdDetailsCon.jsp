@@ -8,6 +8,7 @@
 <script src="../../../../resources/js/jquery-3.6.0.min.js" ></script>
 <script src="../../../../resources/js/product/pdDetailsCon.js" ></script>
 <script src="../../../../resources/js/product/pdDetailsCon2.js" ></script>
+<script src="../../../../resources/js/product/pdDetailsConBuyNow.js" ></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 
 

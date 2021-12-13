@@ -79,33 +79,33 @@ $(function() {
 	
 	
 	$(".orderUpdateBtn").click(function(){
-	
-	  var order_no = $(this).closest('tr').find('.orderUpdateBtn').val();
-	  var p_return = $(this).closest('tr').find('.p_return').val();
-		
-		
-		alert("업데이트버튼" + order_no);
-		alert("환불여부 확인" + p_return);
-		
-		$.ajax({
-		        url: '/adminviews/orderUpdateAjax',
-		        type: 'POST',
-				dataType : 'text',
-		        data: {
-					
-					order_no:order_no,
-					p_return:p_return
-					},
-					
-				success : function(result) {
-				
-					location.reload();
-					
-				}
-				
-		})
-		
-	});
+   
+     var order_no = $(this).closest('tr').find('.orderUpdateBtn').val();
+     var p_return = $(this).closest('tr').find('.p_return').val();
+      
+      
+      alert("업데이트버튼" + order_no);
+      alert("환불여부 확인" + p_return);
+      
+      $.ajax({
+              url: '/adminviews/orderUpdateAjax',
+              type: 'POST',
+            dataType : 'text',
+              data: {
+               
+               order_no:order_no,
+               p_return:p_return
+               },
+               
+            success : function(result) {
+            
+               location.reload();
+               
+            }
+            
+      })
+      
+   });
    
 
  
