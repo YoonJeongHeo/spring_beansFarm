@@ -42,11 +42,10 @@ $(function(){
 });
 
 function setAddress(address){
-	alert("aa");
 		console.log(address);
 		
-		document.querySelector("#m_postnum").value = address.postNum;
+		document.querySelector("#m_postnum").value = address.postnum;
 		document.querySelector("#m_address").value = address.address;
-		document.querySelector("#m_detailed_address").value = address.detailed_address;
+		document.querySelector("#m_detailed_address").value = address.detailedAddress;
 	}
 
