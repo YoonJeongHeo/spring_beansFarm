@@ -148,6 +148,10 @@
 }
 
 /* =============버튼============= */
+.orderUpdateBtn{
+	width: 7rem;
+	height: 2rem;	
+}
 
 .w-btn-skin-outline {
     border: 3px solid #f8e6e0;

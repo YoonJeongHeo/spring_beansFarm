@@ -66,7 +66,7 @@
 						<!-- 고정 여부 수정됨(체크박스) ============================================== -->
 						<td width="15%" data-title="고정 여부">
 							<div class="text_aline">
-                          		<input type="checkbox" value="n" id="notice_fix"<c:if test="${dto.notice_fix eq 'y'}">checked</c:if>>
+                          		<input type="checkbox" value="y" id="notice_fix" name="notice_fix" <c:if test="${dto.notice_fix eq 'y'}">checked</c:if>>
 		                    </div>
 	                    </td>
 	                    <!--  ================================================================= -->
