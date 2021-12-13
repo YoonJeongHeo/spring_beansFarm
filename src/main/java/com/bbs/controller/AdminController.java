@@ -540,34 +540,67 @@ public class AdminController {
 	}
 
 	// 관리자 페이지 제품주문사항 변경
-	@PostMapping("/orderUpdateAjax")
-	@ResponseBody
-	public String orderUpdateAjax(@RequestParam("order_no") Long order_no,@RequestParam("p_return") String p_return) {
-		
-		System.out.println("탓냐?");
-		System.out.println("값 들어오는지 확인============="+order_no + "==================" + p_return);
-		P_orderDTO orderDTO = new P_orderDTO();
-		
-		
-		orderDTO.setOrder_no(order_no);
-		orderDTO.setP_return(p_return);
-		System.out.println("=================orderDTO에 주문번호 환불여부 값 넣기==============="+ orderDTO.getP_return());
-		if(p_return =="n") {
-			System.out.println("바뀌기전======123=====위"+p_return);
-			p_orderService.updateNtoY(orderDTO);
-			System.out.println("바뀌고난 후=====123======위"+orderDTO.getP_return());
-		}else if(p_return =="y") {
-			System.out.println("바뀌기전=====123======밑"+p_return);
-			p_orderService.updateYtoN(orderDTO);
-			System.out.println("바뀌고난 후=====123======밑"+orderDTO.getP_return());
-		}
-		
-		System.out.println(orderDTO);
-		
-		
-		
-		return p_return;
-	}
+//	@PostMapping("/orderUpdateAjax")
+//	@ResponseBody
+//	public String orderUpdateAjax(@RequestParam("order_no") Long order_no,@RequestParam("p_return") String p_return) {
+//		
+//		System.out.println("탓냐?");
+//		System.out.println("값 들어오는지 확인============="+order_no + "==================" + p_return);
+//		P_orderDTO orderDTO = new P_orderDTO();
+//		String result = null;
+//		
+//		orderDTO.setOrder_no(order_no);
+//		orderDTO.setP_return(p_return);
+//		System.out.println("=================orderDTO에 주문번호 환불여부 값 넣기==============="+ orderDTO.getP_return());
+//		if(p_return.equals("n")) {
+//			System.out.println("바뀌기전======12111111=====위"+p_return);
+//			p_orderService.updateNtoY(orderDTO);
+//			System.out.println("바뀌고난 후=====1222222======위"+orderDTO.getP_return());
+//			result = "n";
+//			return result;
+//		}else if(p_return.equals("y")) {
+//			System.out.println("바뀌기전=====133333======밑"+p_return);
+//			p_orderService.updateYtoN(orderDTO);
+//			System.out.println("바뀌고난 후=====144444======밑"+orderDTO.getP_return());
+//			result = "y";
+//			return result;
+//		}
+//		
+//		System.out.println(orderDTO);
+//		System.out.println("****************************" + result + "****************************");
+//		
+//		
+//		return result;
+//	}
+	
+	// 관리자 페이지 제품주문사항 변경
+	   @PostMapping("/orderUpdateAjax")
+	   @ResponseBody
+	   public String orderUpdateAjax(@RequestParam("order_no") Long order_no,@RequestParam("p_return") String p_return) {
+	      
+	      System.out.println("탓냐?");
+	      System.out.println("값 들어오는지 확인============="+ order_no + "==================" + p_return);
+	      P_orderDTO orderDTO = new P_orderDTO();
+	      
+	      
+	      orderDTO.setOrder_no(order_no);
+	      System.out.println("orderDTO에 주문번호 환불여부 값 넣기 : "+ orderDTO.getP_return());
+	      if(p_return.equals("n")) {
+	         System.out.println("바뀌기전 n이 맞냐? : "+p_return);
+	         orderDTO.setP_return("y");
+	         p_orderService.updateNtoY(orderDTO);
+	         System.out.println("바뀌고난 후 : "+ orderDTO.getP_return());
+	      }else if(p_return.equals("y")) {
+	         System.out.println("바뀌기전 y이 맞냐? : "+p_return);
+	         orderDTO.setP_return("n");
+	         p_orderService.updateYtoN(orderDTO);
+	         System.out.println("바뀌고난 후 : "+orderDTO.getP_return());
+	      }
+	      
+	      System.out.println(orderDTO);
+	      
+	      return "";
+	   }
 	
 	
 }
