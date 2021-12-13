@@ -20,6 +20,10 @@ public interface p_orderService {
 
 	public List<P_orderDTO> myAllOrderList(Long m_no, MypageCriteria cri);
 
+	public void updateNtoY(P_orderDTO orderDTO);
+
+	public void updateYtoN(P_orderDTO orderDTO);
+
 
 	
 

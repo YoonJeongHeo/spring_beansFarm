@@ -51,6 +51,18 @@ public class p_orderServiceImpl implements p_orderService{
 		
 		return p_orderMapper.myAllOrderList(m_no, cri);
 	}
+
+	@Override
+	public void updateNtoY(P_orderDTO orderDTO) {
+		p_orderMapper.updateNtoY(orderDTO);
+		
+	}
+
+	@Override
+	public void updateYtoN(P_orderDTO orderDTO) {
+		p_orderMapper.updateYtoN(orderDTO);
+		
+	}
 	
 	
 

@@ -58,4 +58,12 @@
 		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no} limit 0, 10
 	</select>
 	
+	<update id="updateYtoN">
+		update p_order set p_return='n' where order_no=#{order_no}
+	</update>
+	
+	<update id="updateNtoY">
+		update p_order set p_return='y' where order_no=#{order_no}
+	</update>
+	
 </mapper>

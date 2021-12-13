@@ -22,6 +22,10 @@ public interface P_orderMapper {
 
 	public List<P_orderDTO> myAllOrderList(@Param("m_no") Long m_no, @Param("cri") MypageCriteria cri);
 
+	public void updateNtoY(P_orderDTO orderDTO);
+
+	public void updateYtoN(P_orderDTO orderDTO);
+
 
 
 }

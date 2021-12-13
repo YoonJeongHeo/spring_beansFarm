@@ -542,21 +542,31 @@ public class AdminController {
 	// 관리자 페이지 제품주문사항 변경
 	@PostMapping("/orderUpdateAjax")
 	@ResponseBody
-	public String orderUpdateAjax(@RequestParam("order_no") Long order_no, HttpServletRequest request) {
+	public String orderUpdateAjax(@RequestParam("order_no") Long order_no,@RequestParam("p_return") String p_return) {
 		
 		System.out.println("탓냐?");
-		
+		System.out.println("값 들어오는지 확인============="+order_no + "==================" + p_return);
 		P_orderDTO orderDTO = new P_orderDTO();
 		
-		HttpSession session = request.getSession();
-		Long m_no = (Long)session.getAttribute("userNO");
 		
-		orderDTO.setM_no(m_no);
 		orderDTO.setOrder_no(order_no);
+		orderDTO.setP_return(p_return);
+		System.out.println("=================orderDTO에 주문번호 환불여부 값 넣기==============="+ orderDTO.getP_return());
+		if(p_return =="n") {
+			System.out.println("바뀌기전======123=====위"+p_return);
+			p_orderService.updateNtoY(orderDTO);
+			System.out.println("바뀌고난 후=====123======위"+orderDTO.getP_return());
+		}else if(p_return =="y") {
+			System.out.println("바뀌기전=====123======밑"+p_return);
+			p_orderService.updateYtoN(orderDTO);
+			System.out.println("바뀌고난 후=====123======밑"+orderDTO.getP_return());
+		}
 		
 		System.out.println(orderDTO);
 		
-		return "aaaa";
+		
+		
+		return p_return;
 	}
 	
 	
