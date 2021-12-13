@@ -31,7 +31,7 @@
 
                 <div>
             
-                    <h1>상품 리스트</h1>
+                    <h1>신 제 품</h1>
                     
                 </div>
                     <div class="test">

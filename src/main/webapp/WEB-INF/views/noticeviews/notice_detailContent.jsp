@@ -59,10 +59,10 @@
 				
 			<tbody>	
 				<tr>
-					<td data-title="작성자">${noticeList.manager_no}</td>
+					<td data-title="작성자">관리자</td>
 					<td data-title="제목">${noticeList.notice_title}</td>
 					<td data-title="조회">${noticeList.notice_view_count}</td>
-					<td data-title="날짜"><fmt:formatDate value="${noticeList.notice_reg_date}" pattern="yyyy/MM/dd"/></td>
+					<td data-title="날짜"><fmt:formatDate value="${noticeList.notice_reg_date}" pattern="yyyy.MM.dd"/></td>
 				</tr>
 			</tbody>
 
