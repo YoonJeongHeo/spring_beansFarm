@@ -54,9 +54,8 @@
                        <tr>	                     
                        	<td width="10%" data-title="고정 여부">
                        	<!-- 상단 공지에 고정 유무 -->
-                          <input type="checkbox" value="n" id="notice_fix">
-                        
-                       	</td>
+                        	<input type="checkbox" value="y" id="notice_fix" name="notice_fix">
+                        </td>
                   			<td width="80%" data-title="제목"><input type="text" name="notice_title" size="100%" id="notice_title"></td>
 
                   			<td width="10%" data-title="작성자">관리자</td>
