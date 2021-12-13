@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#contents {
+    width: 90%;
+    min-height : 80vw;
+    height : auto;
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contents h1 {
+    margin-top: 5%;
+    text-align: left;
+}
+
+#teamInfoTbl {
+    width: 100%;
+    border: 0.01rem solid black;
+    border-spacing: 0;
+}
+
+#teamInfoTbl th {
+    border: 0.01rem solid black;
+}
+
+#teamInfoTbl td{
+    width: 16.5%;
+    padding: 1%;
+    border: 0.01rem solid black;
+}

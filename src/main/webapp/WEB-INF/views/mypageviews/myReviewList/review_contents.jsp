@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="../../../../resources/css/mypage/reviewWriteForm.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../../../../resources/js/reviewWriteForm_view.js" ></script>
+
 <div id="reviewWriteFormCenter">
-	
 	<h3>후기작성</h3>
 	<form action="/mypageviews/myReviewList/reviewInsert" method="post" id="reviewWriteForm" enctype="multipart/form-data"> 
 		<table class="mypageTabel">

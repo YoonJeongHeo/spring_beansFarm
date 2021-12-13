@@ -9,10 +9,6 @@ $(function(){
 	    $(".realSearch").focus();
     });
 
-	$("#search").click(function() {
-		
-    });
-
 	$(".iBar").click(function() {
 		alert("후기작성하러가기");
 	});
@@ -37,6 +33,12 @@ $(function(){
 		}
 
 
+	});
+	
+	
+	//검색창 닫기
+	$("#searchFormx").on("click", function(){
+		$("#popup").fadeOut();
 	});
 	
 	

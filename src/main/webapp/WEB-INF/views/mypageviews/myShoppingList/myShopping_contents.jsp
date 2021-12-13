@@ -30,15 +30,13 @@
 							<c:forEach var="myAllOrderHistory" items="${myAllOrderHistory}">
 		             			
 				                <tr class="mypageTableHo">
-								<td width="10%"> <a href="/product/product_details/pdDetailsCon_view?p_no=${myAllOrderHistory.p_no}"> <img src="src=/upload/review/${myAllOrderHistory.p_image}" width="150px" height="150px"></a> </td>
+								<td width="10%"> <a href="/product/product_details/pdDetailsCon_view?p_no=${myAllOrderHistory.p_no}">
+												<img src="/upload/product/${myAllOrderHistory.p_image}" width="150px" height="150px"></a> </td>
 								<td width="10%">${myAllOrderHistory.p_name}</td>
                                 <td width="15%"><fmt:formatDate value="${myAllOrderHistory.order_reg_date}" pattern="yyyy-MM-dd" /></td>
                                 <td width="15%">${myAllOrderHistory.order_no}</td> 
                                 <td width="25%" colspan="2">
-	                                 <ul>
-	                                  	<li><fmt:formatNumber value="${myAllOrderHistory.order_price}" pattern="#,###" /></li>
-	                                  	<li>${myAllOrderHistory.product_quantity}</li>
-	                                 </ul>
+                                	<fmt:formatNumber value="${myAllOrderHistory.order_price}" pattern="#,###" /> (${myAllOrderHistory.option_quantity1})
                             	</td>
                                 <td width="20%">
                                  <form action="/mypageviews/myReviewList/reviewWriteForm_view" method="post" id="reviewChk" class="reviewChk">
@@ -50,7 +48,6 @@
                                
 							</tr>
              				</c:forEach>
-                            <!-- 글 내용 나타나야하는 공간 -->
                         </table>
                         
                        

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../resources/css/admin/productManage.css">
 
 		
-		<div id="con2">
+		<div id="con3">
 		
 			<div>
 				<br>

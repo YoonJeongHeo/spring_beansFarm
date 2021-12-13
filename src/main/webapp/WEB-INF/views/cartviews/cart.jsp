@@ -101,13 +101,7 @@
         <br><br><br>
         
 		<c:choose>
-            	<c:when test="${userID eq null}">
-			        <div id="order">
-			            <button id="orderNoBtn">주문하기</button>
-			        </div>
-        		</c:when>
-        		
-        		<c:when test="${userID ne null}">
+            	<c:when test="${userID ne null}">
 			        <div id="order">
 			            <button id="orderBtn">주문하기</button>
 			        </div>

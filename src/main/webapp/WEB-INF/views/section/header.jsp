@@ -61,7 +61,7 @@
         
                         <ul>
                             <li class="mainmenu">
-                                <a href="#">About</a>
+                                <a href="/aboutviews/about_view">About</a>
                             </li>
         
                             <li class="mainmenu">
