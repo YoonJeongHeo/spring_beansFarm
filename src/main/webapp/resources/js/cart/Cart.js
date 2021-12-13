@@ -56,7 +56,7 @@ $(function(){
 			
 
 	  	}else if($(cartChk).is(":checked") == true) {
-			$("input[name=cartAll]").prop("checked",true);
+	  		$(cartChk).prop("checked",true);
 			
 			total = total + order_price
 			
