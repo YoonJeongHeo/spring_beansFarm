@@ -171,7 +171,7 @@ insert into product_details_page(p_no, pd_image) values(8, "브라질 마운틴 
 
 -- 후기
 insert into review(m_no, order_no, r_title, r_content, r_photo, r_thumbnail, r_star)
-values(1, 1, "더미", "더미데이터", "none.png", "none.png", 5);
+values(1, 1, "존맛탱", "아주 만족스럽습니다", "none.png", "none.png", 5);
 
 -- 공지사항
 insert into notice (notice_title, notice_content, manager_no, notice_fix)
