@@ -1,12 +1,12 @@
 -- -----------------------------------------------------------------------------------------------------------------
--- 당장 만들어지지않은 페이지의 더미값을 넣어줄 임의 값들.
 -- 사전준비
 -- 0. C드라이브를 들어가서 beansFarm폴더 만들기
 -- 0-1. beansFarm폴더안에 product, review, temp, qna 폴더를 만들어준다.
 -- 0-2. product폴더안에 productDetails폴더를 만들어 준다.
--- 0-3. 각 폴더안에 none.png사진을 만들어준다. (대충 사진에 이미지가 없습니다. 라는 이미지.)
+-- 0-3. 각 폴더안에 none.png사진 넣어주기.
+-- ---- 모든 이미지는 이클립스내에 images 안에 있으니 참고 하시면 됩니다
 
--- 1. 디비 전체 실행 후 하단의 멤버쉽을 넣어줍니다.
+-- 1. 디비 테이블을 생성후 멤버쉽을 넣어줍니다.
 -- 2. 이클립스내에 태스트중 회원,쿠폰, 관리자순으로 돌립니다.)
 -- (그 후, 멤버쉽을 주석걸고 실행하시면 됩니다.)
 
@@ -173,7 +173,7 @@ values("공지제목", "공지내용", 1);
 
 -- 주문서s
  insert into p_order(order_id, m_no, postnum, address, detailed_address, recipient_name, recipient_phone, order_price, p_no, op_no1, option_quantity1, op_no2)
-    values("uuid", 1, "100", "대구", "달서구", "홍길동", "010-1111-1111", 5000, 1, 1, 1, 1);
+    values(1, 1, "100", "대구", "달서구", "홍길동", "010-1111-1111", 5000, 1, 1, 1, 1);
    
 -- 제품상세페이지
 insert into product_details_page(p_no, pd_image) values(1, "브라질 옐로우 버번.jpg");
@@ -192,4 +192,3 @@ values(1, 1, "더미", "더미데이터", "none.png", "none.png", 5);
 -- QnA
 insert into qna(q_title, q_content, m_no, ic_no, manager_no, q_answer, q_answer_date)
 values("문의 제목", "문의 내용", 1, 1, 1, "답변내용", "2021-12-29");
-
