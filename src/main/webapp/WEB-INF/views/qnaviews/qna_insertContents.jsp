@@ -101,7 +101,7 @@
 						
                         <div id="btnGroup">
 	                        <input id="insertbtn" type="submit" value="작성하기" class="button2">
-	                        <button type="button" onclick="location.href='/qnaviews/qna_view'" class="button2">돌아가기</button>
+	                        <button type="button" onclick="location.href='/qnaviews/qna_user_view'" class="button2">돌아가기</button>
                         </div>
                         
                     </form>
