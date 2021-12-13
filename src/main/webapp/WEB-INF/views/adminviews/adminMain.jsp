@@ -31,7 +31,7 @@
 					<td>${adminMainOH.order_no}</td>
 					<td>${adminMainOH.m_id}</td>
 					<td>${adminMainOH.p_name}</td>
-					<td>${adminMainOH.order_price}</td>
+					<td><fmt:formatNumber value="${adminMainOH.order_price}" pattern="#,###" /></td>
 					<td><fmt:formatDate value="${adminMainOH.order_reg_date}" type="both" pattern="yyyy. MM. dd" /></td>
 				</tr>
 				</c:forEach>

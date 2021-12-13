@@ -90,7 +90,7 @@ $(function() {
 		$.ajax({
 		        url: '/adminviews/orderUpdateAjax',
 		        type: 'POST',
-				dataType : 'json',
+				dataType : 'text',
 		        data: {
 					
 					order_no:order_no,
