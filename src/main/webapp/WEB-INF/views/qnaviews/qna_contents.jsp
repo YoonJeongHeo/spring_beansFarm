@@ -140,16 +140,10 @@ $(document).ready(function(){
 	}
 
 });
-/* 
-
-$(function() {
-	var statusChk = $(this).closest('tr').find('.statusChk').val();
-	var answerChk = "답변완료"; 
-	/* boolean isChk = statusChk.match(answerChk); */
 	
 	if(statusChk.match(answerChk)) {
 		$(".statusChk").css("color", "blue");
 	}
 	
-}); */
+});
 </script>

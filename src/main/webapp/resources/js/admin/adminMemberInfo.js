@@ -5,8 +5,6 @@ $(function(){
 		var m_id = $('#m_id').val();
 		var msName = $('#membershipName').val();
 		
-		alert(m_id);
-		alert(msName);
 		$.ajax({
 			url:'/adminviews/memberInfoupdate',
 			type:'POST',

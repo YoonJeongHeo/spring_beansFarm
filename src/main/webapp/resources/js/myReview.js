@@ -3,9 +3,7 @@ $(function(){
 	$("#test").on("click",function(){
 		
 			var r_no = $('#test').val();
-			
-			alert(r_no)
-		
+					
 	});
 	
 	$(".reDelBtn2").on("click",function(event){
@@ -28,8 +26,7 @@ $(function(){
 		
 			    		}else {
 	
-						alert("취소되었습니다!");
-						alert(r_no);
+						alert("취소되었습니다!")
 						event.preventDefault();
 		     			return false;
 			      }

@@ -10,9 +10,6 @@ $(function(){
         
 		let type = $(".searchBox select").val();
         let keyword = $("input[name='keyword']").val();
-
-		alert("type : " + type);
-		alert("keyword : " + keyword);
 		
 		if(!type){
             alert("검색 종류를 선택하세요.");

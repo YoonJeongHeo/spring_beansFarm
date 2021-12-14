@@ -1,10 +1,4 @@
 
-
-alert("!!!!!");
-
-		
-	
-
 function checkExtension(fileName){
 	var regex = new RegExp("(.*?)\.(jpg|png)$");
 		if(!regex.test(fileName)){
@@ -19,15 +13,9 @@ function checkExtension(fileName){
 	
 	/* 파일업로드 이벤트 막기 */
 	$("#reviewUpdateCheck").on("click",function(){
-	alert("111111111111111");	
 		
 		var file = $("#r_photo").val();
 			
-	
-	
-		alert(prePhoto);
-		alert(preThumbnail);
-		
 		  if(!checkExtension(file)) {
 	            return false;
 	        }

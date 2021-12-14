@@ -9,9 +9,6 @@ $(function(){
         
       let type = $(".searchBox select").val();
         let keyword = $("input[name='keyword']").val();
-
-      alert("type : " + type);
-      alert("keyword : " + keyword);
       
       if(!type){
             alert("검색 종류를 선택하세요.");
@@ -57,7 +54,6 @@ $(function(){
          // 체크된 것만 값을 뽑아서 배열에 push
       })
       
-      alert(m_noCheckArr);
       $('input[name=m_noCoupon]').attr('value', m_noCheckArr);
          
    });
@@ -80,7 +76,6 @@ $(function(){
       
       
       if(confirm("선택한 회원에게 쿠폰을 지급하시겠습니까?")) {
-         alert(m_noList);
          $.ajax({
               url: '/adminviews/coupon/couponAllInsert',
               type: 'POST',
@@ -94,7 +89,6 @@ $(function(){
             traditional:true,
             success : function(result) {
                
-               alert(result);
                alert("쿠폰 지급이 완료 되었습니다");
                location.reload();
                
@@ -165,7 +159,7 @@ $(function(){
    // 쿠폰지급(한 회원당 지급하기)
    $(".couponBtn").on("click", function(){
       var m_no = $(this).closest('tr').find('#m_no').val();
-      alert(m_no);
+     
       $(location).attr("href", "/adminviews/control/couponGift_view?m_no="+m_no);
       
    });

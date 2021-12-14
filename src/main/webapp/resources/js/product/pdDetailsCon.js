@@ -31,7 +31,7 @@ $(function(){
 		$("#ttt").attr("value", testNum);
 				
 				$(".pageInfo a").on("click", function(e) {
-							alert("a");
+							
 							e.preventDefault(); // 기본 이벤트 막기
 							moveForm.find("input[name = 'pageNum']").val($(this).attr("href"));
 							moveForm.attr("action", "/product/product_details/pdDetailsCon_view");
