@@ -41,7 +41,7 @@
 			
 
 			<!-- 검색기능 -->				
-			<div class="searchBox">
+			<div id="searchBox">
 	            <select name="type" id="type">
 	                <option value="faq_title" <c:out value="${pageMaker.cri.type eq 'faq_title'?'selected':''}"/>>제목</option>
 		            <option value="ic_name" <c:out value="${pageMaker.cri.type eq 'ic_name'?'selected':''}"/>>카테고리</option>
@@ -148,8 +148,8 @@
 			<form id="moveForm" action="get">
 				<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 				<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
-				<input type="hidden" name="keyword" value="${pageMaker.cri.keyword }">
-				<input type="hidden" name="type" value="${pageMaker.cri.type }">
+				<input type="hidden" id="keyword" name="keyword" value="${pageMaker.cri.keyword }">
+				<input type="hidden" id="type" name="type" value="${pageMaker.cri.type }">
 			</form>
 	</div>
 
@@ -226,8 +226,8 @@
 			var moveForm = $("#moveForm");
 			
 	        
-			let type = $(".searchBox select").val();
-	        let keyword = $("input[name='keyword']").val();
+			let type = $("#searchBox select").val();
+	        let keyword = $("#keyword").val();
 
 			
 			if(!type){
@@ -240,9 +240,9 @@
 	            return false;
 	        }   
 
-			moveForm.find("input[name='type']").val(type);
+			moveForm.find("#type").val(type);
 			
-	        moveForm.find("input[name='keyword']").val(keyword);
+	        moveForm.find("#keyword").val(keyword);
 	        moveForm.find("input[name='pageNum']").val(1);
 			moveForm.attr("action", "/faqviews/faq_view");
 	        moveForm.submit();
