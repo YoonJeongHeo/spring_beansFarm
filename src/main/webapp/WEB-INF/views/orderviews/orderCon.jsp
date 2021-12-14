@@ -21,13 +21,35 @@
         <br>
 
         <h3>주문상세내역</h3>
+        
+        <!-- ==================상세페이지 재고량 빼기====================================== -->
+			
+				<c:forEach var="cartList" items="${cartList}">
+					<c:forEach var="opList" items="${opList}">
+						<tr>
+					
+							<td>
+							
+							<c:if test="${cartList.op_no1 eq opList.op_no}">
+							<input type="text" value="${opList.op_no}" class="op_no" name="op_no">
+							</c:if>
+							
+							</td>
+						
+						</tr>
+					</c:forEach>
+				</c:forEach>
+			
+			<!-- ===================상세페이지 재고량 빼기================================= -->
+        
         <table id="orderDetailsTbl">
+        
             <tr>
                 <th colspan="2">제품 / 옵션 정보</th>
                 <th>수량</th>
                 <th>제품금액</th>
             </tr>
-
+			
          	<c:forEach var="cartList" items="${cartList}">
          	 <tr>
          	 	<td width="10%" >
@@ -51,7 +73,7 @@
          	 	/
          	 	<c:forEach var="opList" items="${opList}">
          	 		<c:if test="${cartList.op_no2 eq opList.op_no}">${opList.op_name} 
-         	 			<input type="text" value="${opList.op_no}" class="op_no" name="op_no">
+         	 			
          	 			<input type="text" value="${opList.op_stock}" class="op_stock" name="op_stock">
          	 		</c:if>
          	 		
@@ -69,7 +91,10 @@
 
         </table>
         <div id="amountBox">
-        	
+      
+        
+			
+			
             <div class="price">
             	
                 <h4>주문 금액</h4><br>
