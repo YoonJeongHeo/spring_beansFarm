@@ -27,6 +27,8 @@ public interface p_orderService {
 	public void updateYtoN(P_orderDTO orderDTO);
 
 	public void stockUpdate(P_orderDTO p_DTO);
+	
+	public List<P_orderDTO> myOrderHistory(Long m_no);
 
 
 	

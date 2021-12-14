@@ -136,11 +136,6 @@ public class NoticeController {
 		
 		return "/noticeviews/notice_detailView";
 		}
-	
-	    
-
-		
-		
 		
 	
 //	공지사항 게시물 삭제		

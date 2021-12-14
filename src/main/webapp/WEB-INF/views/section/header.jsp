@@ -22,8 +22,7 @@
                 <input type="text" name="keyword" class="realSearch" placeholder="제품검색">
                 <i class="fas fa-search fa-3x" id="searchAction"></i>
                 <hr>
-               
-
+           
             </form>
         </div>
     </div>
@@ -125,14 +124,14 @@
                           <c:when test="${userID eq null && adminID eq null}">
                              <div id="notlogin">
                              
-                                 <i class="fas fa-search fa-lg" id="search"></i>
+                                 <i class="fas fa-search fa-lg" id="headerSearch"></i>
                                  <a href="/cartviews/cart_view"><i class="fas fa-shopping-cart fa-lg"></i></a>
                                  <a href="/memberloginviews/memberLogin_view"><i class="iuserInfo fas fa-user-alt fa-lg" id="iuserInfo"></i></a> 
                               </div>
                           </c:when>
                           <c:when test="${userID ne null}">
                               <div id="login">
-                                 <i class="fas fa-search fa-lg" id="search"></i>
+                                 <i class="fas fa-search fa-lg" id="headerSearch"></i>
                                  <a href="/cartviews/cart_view"><i class="fas fa-shopping-cart fa-lg"></i></a>
                                  <a href="/mypageviews/mypage/mypage_view"><i class="iuserInfo fas fa-user-alt fa-lg" id="iuserInfo"></i></a>
                                  <a href="#"><i class="fas fa-sign-out-alt fa-lg" id="logout"></i></a>
@@ -143,7 +142,7 @@
                             <c:when test="${adminID ne null}">
                               <div id="login">
                               	 <a href="/adminviews/adminMain_view"><i class="fas fa-user-cog fa-lg"></i></a>
-                                 <i class="fas fa-search fa-lg" id="search"></i>
+                                 <i class="fas fa-search fa-lg" id="headerSearch"></i>
                                  <a href="/cartviews/cart_view"><i class="fas fa-shopping-cart fa-lg"></i></a>
                                  <a href="#"><i class="fas fa-sign-out-alt fa-lg" id="logout"></i></a>
                                  

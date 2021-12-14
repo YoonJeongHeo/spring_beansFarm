@@ -58,6 +58,13 @@
 		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no} limit 0, 10
 	</select>
 	
+	<select id="myOrderHistory" resultType="com.bbs.model.P_orderDTO">
+		select *
+		from product p join p_order po on p.p_no = po.p_no
+		where m_no = #{m_no} limit 0, 5
+		
+	</select>
+	
 	<update id="updateYtoN">
 		update p_order set p_return='n' where order_no=#{order_no}
 	</update>

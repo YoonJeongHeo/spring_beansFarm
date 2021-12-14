@@ -186,7 +186,7 @@ $(function () {
 			var moveForm = $(".moveForm");
 			
 			let type = $(".p_searchBox select").val();
-			let keyword = $("input[name='keyword']").val();
+			let keyword = $("#keyword").val();
 			
 			
 			if(!type){

@@ -4,14 +4,12 @@ $(function(){
 	var m_id = $("#m_id").val();
 	var m_name = $("#m_name").val();
 	
-	$("#search").click(function() {
+	$("#headerSearch").click(function() {
 	    $("#popup").fadeIn();
 	    $(".realSearch").focus();
     });
 
-	$(".iBar").click(function() {
-		alert("후기작성하러가기");
-	});
+
 	
 	$("#logout").click(function() {
 		if(confirm("로그아웃 하겠습니까?") == true) {
@@ -43,8 +41,21 @@ $(function(){
 	
 	
 	//검색기능
-	$("#searchAction").click(function(){	
-		
+	$("#searchAction").click(function (){
+		search();
+	});
+	
+	$(".realSearch").keypress(function(e){
+		if(e.keyCode == 13){
+			e.preventDefault();
+			search(); 
+		}  	
+	});
+
+
+	
+	
+	function search() {
 		var keyword = $(".realSearch").val(); 
 		
 		$.ajax({
@@ -55,9 +66,8 @@ $(function(){
 					$("#mainSF").attr("action", "/product/product_view");
        				$("#mainSF").submit();
 				}
-			})
-		
-	});
+		})
+	}
 	
 	
 	//파비콘

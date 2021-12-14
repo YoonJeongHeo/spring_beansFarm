@@ -73,6 +73,11 @@ public class p_orderServiceImpl implements p_orderService{
 		
 		
 	}
+
+	@Override
+	public List<P_orderDTO> myOrderHistory(Long m_no) {
+		return p_orderMapper.myOrderHistory(m_no);
+	}
 	
 	
 
