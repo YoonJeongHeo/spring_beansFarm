@@ -142,7 +142,7 @@
                   
                   <div class="modal" draggable="true"> 
                   	<div class="modal_body">
-                  		장바구니에 상품이 등록이 되었습니다<br><br>
+                  		장바구니에 제품이 등록이 되었습니다<br><br>
                   		장바구니로 이동하시겠습니까?<br><br>
                   		
                   		<button id="yes">예</button>
@@ -192,7 +192,7 @@
 
 							</tr>
 
-							<!-- 상품사진,아카시아,날짜,주문번호, 금액+수량, 후기작성버튼. -->
+							<!-- 제품사진,아카시아,날짜,주문번호, 금액+수량, 후기작성버튼. -->
 							<c:forEach var="list" items="${list}">
 								<input type="hidden" id="test" value="${list.p_no}">
 								<tr class="mypageTableHo">

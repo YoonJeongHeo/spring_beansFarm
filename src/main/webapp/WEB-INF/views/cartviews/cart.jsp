@@ -15,7 +15,7 @@
 
         <br>
         
-        <p>주문하실 상품의 제품명과 수량을 정확히 확인해 주세요.</p>
+        <p>주문하실 제품의 제품명과 수량을 정확히 확인해 주세요.</p>
 
         <h3>제품 정보</h3>
         <table id="infoTbl">
@@ -42,7 +42,7 @@
             	<c:when test="${empty cartAllList}">
 		            <tr>
 		                <td colspan="7" height="350px">
-		                    <h3>장바구니에 담긴 상품이 없습니다 :(</h3><br>
+		                    <h3>장바구니에 담긴 제품이 없습니다 :(</h3><br>
 		                    <button id="basket" onClick="location.href='/product/product_view?keyword='">제품 담으러 가기</button>
 		                </td>
 		            </tr>

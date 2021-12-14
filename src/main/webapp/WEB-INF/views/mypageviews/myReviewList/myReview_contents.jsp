@@ -18,7 +18,7 @@
                     <div id="myreviewListForm">
                         <table class="mypageTabel">
                             <tr>
-                                <th width="30%" colspan="2" style="">상품정보</th>
+                                <th width="30%" colspan="2" style="">제품정보</th>
                                 <th width="45%" >내용</th>
                                 <th width="5%" >별점</th>
                                 <th width="10%">수정</th>
@@ -32,7 +32,7 @@
               
                                 <td width="10%"> 
                                 <img src="/upload/review/${myreviewListAll.r_thumbnail}" width="150px" height="150px"></td>
-                                <td width="20%" >상품내용</td>
+                                <td width="20%" >제품내용</td>
                                 
                                 <td width="45%">
                                 

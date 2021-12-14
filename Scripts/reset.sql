@@ -178,7 +178,7 @@ ALTER TABLE beansFarm.category
 ALTER TABLE beansFarm.category
 	AUTO_INCREMENT = 0;
 
--- 상품옵션
+-- 제품옵션
 CREATE TABLE beansFarm.p_option (
 	op_no    INT         NOT NULL, -- 옵션번호
 	p_no     BIGINT      NULL,     -- 제품번호
@@ -188,9 +188,9 @@ CREATE TABLE beansFarm.p_option (
 	oc_no    INT         NOT NULL  -- 옵션분류번호
 );
 
--- 상품옵션
+-- 제품옵션
 ALTER TABLE beansFarm.p_option
-	ADD CONSTRAINT PK_p_option -- 상품옵션 기본키
+	ADD CONSTRAINT PK_p_option -- 제품옵션 기본키
 		PRIMARY KEY (
 			op_no -- 옵션번호
 		);
@@ -545,9 +545,9 @@ ALTER TABLE beansFarm.product
 			category_no -- 카테고리번호
 		);
 
--- 상품옵션
+-- 제품옵션
 ALTER TABLE beansFarm.p_option
-	ADD CONSTRAINT FK_option_classification_TO_p_option -- 옵션분류 -> 상품옵션
+	ADD CONSTRAINT FK_option_classification_TO_p_option -- 옵션분류 -> 제품옵션
 		FOREIGN KEY (
 			oc_no -- 옵션분류번호
 		)
@@ -555,9 +555,9 @@ ALTER TABLE beansFarm.p_option
 			oc_no -- 옵션분류번호
 		);
 
--- 상품옵션
+-- 제품옵션
 ALTER TABLE beansFarm.p_option
-	ADD CONSTRAINT FK_product_TO_p_option -- 제품 -> 상품옵션
+	ADD CONSTRAINT FK_product_TO_p_option -- 제품 -> 제품옵션
 		FOREIGN KEY (
 			p_no -- 제품번호
 		)
@@ -597,21 +597,21 @@ ALTER TABLE beansFarm.cart
 
 -- 장바구니
 ALTER TABLE beansFarm.cart
-	ADD CONSTRAINT FK_p_option_TO_cart2 -- 상품옵션 -> 장바구니
+	ADD CONSTRAINT FK_p_option_TO_cart2 -- 제품옵션 -> 장바구니
 		FOREIGN KEY (
 			op_no1 -- 옵션번호1
 		)
-		REFERENCES beansFarm.p_option ( -- 상품옵션
+		REFERENCES beansFarm.p_option ( -- 제품옵션
 			op_no -- 옵션번호
 		);
 
 -- 장바구니
 ALTER TABLE beansFarm.cart
-	ADD CONSTRAINT FK_p_option_TO_cart -- 상품옵션 -> 장바구니2
+	ADD CONSTRAINT FK_p_option_TO_cart -- 제품옵션 -> 장바구니2
 		FOREIGN KEY (
 			op_no2 -- 옵션번호2
 		)
-		REFERENCES beansFarm.p_option ( -- 상품옵션
+		REFERENCES beansFarm.p_option ( -- 제품옵션
 			op_no -- 옵션번호
 		);
 

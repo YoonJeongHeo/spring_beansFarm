@@ -84,7 +84,7 @@ $(function(){
 			    data:{cart_no:cart_no},
 				traditional:true, //배열
 			    success: function(data) {
-					alert("상품이 삭제 되었습니다");
+					alert("제품이 삭제 되었습니다");
 					location.reload();
 			    },
 			    error: function(err) {
@@ -135,7 +135,7 @@ $(function(){
 			
 			$("#goToOrder").submit();
 		}else {
-			alert("주문할 상품을 선택해 주세요");
+			alert("주문할 제품을 선택해 주세요");
 		}
 		
 	

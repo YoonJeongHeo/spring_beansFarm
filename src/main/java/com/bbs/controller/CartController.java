@@ -54,7 +54,7 @@ public class CartController {
 	
 	
 	
-	// 상세페이지에서 선택한 상품 ajax로 장바구니에 넣기.
+	// 상세페이지에서 선택한 제품 ajax로 장바구니에 넣기.
 	   @PostMapping("/goToCart")
 	   @ResponseBody
 	   public String goToCart(

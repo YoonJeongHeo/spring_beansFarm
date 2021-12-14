@@ -34,7 +34,7 @@
                         <th width="8%"><span>주문번호</span></th>
                         
                         <th width="10%"><span>회원아이디</span></th>
-                        <th width="35%"><span>주문상품</span></th>
+                        <th width="35%"><span>주문제품</span></th>
                         <th width="10%"><span>주문금액</span></th>                        
                         <th width="15%"><span>주문일</span></th>
                         <th width="5%"><span>환불여부</span></th>

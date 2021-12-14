@@ -23,7 +23,7 @@
 		delete from product_details_page where p_no = #{p_no}
 	</delete>
 
-			<!-- 상세페이지에서 해당 상품의 전체 후기 보기 -->
+			<!-- 상세페이지에서 해당 제품의 전체 후기 보기 -->
 	<select id="product_all_review_list" resultType="com.bbs.model.ProductDTO">
 		
 		select * 

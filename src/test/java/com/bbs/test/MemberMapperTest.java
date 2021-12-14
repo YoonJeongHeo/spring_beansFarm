@@ -29,7 +29,7 @@ public class MemberMapperTest {
 	@Test
 	public void memberInsert() {
 		
-		for(int i=1; i<=10; i++) {
+		for(int i=1; i<=3; i++) {
 			MemberDTO memberDTO = new MemberDTO();
 			
 			

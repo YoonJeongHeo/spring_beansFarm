@@ -19,7 +19,7 @@
         <div class="searchForm">
             <form action="" method="get" id="mainSF">
 
-                <input type="text" name="keyword" class="realSearch" placeholder="상품검색">
+                <input type="text" name="keyword" class="realSearch" placeholder="제품검색">
                 <i class="fas fa-search fa-3x" id="searchAction"></i>
                 <hr>
            
@@ -180,7 +180,7 @@
                            <h3>product</h3>
                            <hr>
                            <ul>
-					           <li><a href="/product/product_view">전체상품 </a></li>
+					           <li><a href="/product/product_view">전체제품 </a></li>
 					           <c:forEach var="categoryList" items="${categoryList}">
 	                           <li><a href="/product/product_view?type=${categoryList.category_no }">${categoryList.category_name }</a></li>
 	                           </c:forEach>

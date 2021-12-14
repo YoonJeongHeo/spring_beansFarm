@@ -148,16 +148,16 @@ public class productDetailsPageController {
 			return "redirect:/adminviews/adminProductManage_view";
 		}
 		
-		//================================================상품상세페이지 들어가기==============================================
+		//================================================제품상세페이지 들어가기==============================================
 		
 		@GetMapping("/pdDetailsCon_view")
 		public String pdDetailsCon_view(@RequestParam("p_no") Long p_no, Model model, ProductDetailsCriteria cri) {
 			
-			System.out.println("상품상세페이지 들어가기");
+			System.out.println("제품상세페이지 들어가기");
 			
 			cri.setP_no(p_no);
 			
-			  // 해당상품 전체 리뷰 보기.
+			  // 해당제품 전체 리뷰 보기.
 			  List<ProductDTO> list = pd.product_all_review_list(cri);
 			  List<POptionDTO> opList = op.selectByPNo(p_no);
 			  List<OptionClassificationDTO> ocList = oc.selectByAll();
@@ -167,7 +167,7 @@ public class productDetailsPageController {
 			  System.out.println(list);
 			  ProductDTO productDTO = product.selectByPNo(p_no);
 			  model.addAttribute("productDTO",productDTO);
-			  System.out.println("해당상품 전체 리뷰 보기");
+			  System.out.println("해당제품 전체 리뷰 보기");
 			  
 			  model.addAttribute("opList",opList);
 			  model.addAttribute("ocList",ocList);
@@ -192,7 +192,7 @@ public class productDetailsPageController {
 			return "/product/product_details/pdDetailsCon_view";
 		}
 		
-		// 상품상세정보내에 후기 페이징 할 시 ajax로 페이지 이동없이 변경.
+		// 제품상세정보내에 후기 페이징 할 시 ajax로 페이지 이동없이 변경.
 		@PostMapping("pagingAjax")
 		@ResponseBody
 		public int pagingAjax(Model model, @RequestParam("pageNum")int num, @RequestParam("pNo")Long pNo, ProductDetailsCriteria cri) {

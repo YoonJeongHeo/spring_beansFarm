@@ -435,7 +435,7 @@ public class MypageController {
 	}
 	
 	
-	// 마이페이지 해당상품 리뷰 작성 유무 확인
+	// 마이페이지 해당제품 리뷰 작성 유무 확인
 		@PostMapping("/mypageviews/myPagereviewCountAjax")
 		@ResponseBody
 		public int myPagereviewCountAjax(HttpServletRequest request ,@RequestParam("order_no") Long order_no) {

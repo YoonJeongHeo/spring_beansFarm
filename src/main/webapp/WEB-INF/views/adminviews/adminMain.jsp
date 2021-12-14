@@ -21,7 +21,7 @@
 				<tr>
 					<th width="10%">번호</th>
 					<th width="10%">아이디</th>
-					<th width="50%">주문상품</th>
+					<th width="50%">주문제품</th>
 					<th width="15%">주문금액</th>
 					<th width="15%">주문시간</th>
 					

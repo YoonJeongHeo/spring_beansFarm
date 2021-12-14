@@ -47,7 +47,7 @@ public class POptionController {
 		
 	}
 	
-//	상품옵션 작성 요청
+//	제품옵션 작성 요청
 	@GetMapping("/op_insert")
 	public String op_insert(POptionDTO dto) {
 		
@@ -59,7 +59,7 @@ public class POptionController {
 		return "redirect:/adminviews/adminOptionManage_view";
 	}
 	
-//	상품옵션 삭제 요청
+//	제품옵션 삭제 요청
 	@GetMapping("/op_delete")
 		public String op_delete(@RequestParam("op_no")String num) {
 		
@@ -71,7 +71,7 @@ public class POptionController {
 		return "redirect:/adminviews/adminOptionManage_view";
 	}
 	
-//	상품옵션 수정 요청
+//	제품옵션 수정 요청
 	@GetMapping("/op_update")
 	public String op_update(POptionDTO dto) {
 		
