@@ -93,7 +93,7 @@
                         
                         <div id="btnGroup">
 	                        <input type="submit" value="수정 하기" class="button2" id="updatebtn">
-	                        <button type="button" onclick="location.href='/qnaviews/qna_view'" class="button2">돌아가기</button>
+	                        <button type="button" onclick="location.href='/qnaviews/qna_user_view'" class="button2">돌아가기</button>
                         </div>
                         
                     </form>

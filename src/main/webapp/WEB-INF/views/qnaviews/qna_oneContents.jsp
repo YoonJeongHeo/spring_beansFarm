@@ -119,7 +119,7 @@
 		            			
 		                        	<button type="button" onclick="location.href='/qnaviews/qnaUpdateView?q_no=${dto.q_no}'" id="upbtn" class="button2">수정 하기</button>
 		                        	<button type="button" id="deleteBtn" class="button2">삭제 하기</button>
-			                        <button type="button" onclick="location.href='/qnaviews/qna_view'" class="button2">돌아가기</button>
+			                        <button type="button" onclick="location.href='/qnaviews/qna_user_view'" class="button2">돌아가기</button>
 			                    </div>
 	                        </c:when>
 	                        <c:when test="${adminID ne null}">

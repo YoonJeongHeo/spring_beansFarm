@@ -27,7 +27,7 @@
 	<!-- 문의 분류 추가	 -->
 	<div id="insert">
 	<h4>문의 분류 추가</h4>
-	<form action="/qnaviews/Inquiry_insert" method="get">
+	<form action="/adminviews/Inquiry_classification/Inquiry_insert" method="get">
 		문의분류 번호 : <input type="number" name="ic_no">
 		
 		<br>
@@ -45,7 +45,7 @@
 	<!--  문의 분류 수정 -->
 	<div id="update">
 	<h4>문의 분류 수정</h4>
- 	<form action="/qnaviews/Inquiry_update" method="get">
+ 	<form action="/adminviews/Inquiry_classification/Inquiry_update" method="get">
 		
 		
 		문의분류 번호 :
@@ -83,7 +83,7 @@
 						<td>${dto.ic_no}</td>
 						<td>${dto.ic_name}</td>
 						<td>
-						<button type="button" onclick="location.href='/qnaviews/Inquiry_delete?ic_no=${dto.ic_no}'">삭제</button>
+						<button type="button" onclick="location.href='/adminviews/Inquiry_classification/Inquiry_delete?ic_no=${dto.ic_no}'">삭제</button>
 						</td>
 					</tr>
 				</c:forEach>

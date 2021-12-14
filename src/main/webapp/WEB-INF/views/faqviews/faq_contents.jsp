@@ -90,12 +90,18 @@
 							
 								<td class="txtShort" data-title="제목">
 								<!-- 관리자시 -->
-									<c:if test="${adminID ne null}">
-										<a href="/faqviews/faq_infoInquiry_Contents?faq_no=${faq_contents.faq_no}" style="text-decoration: none; color: black; cursor: pointer;">
+									<c:choose>
+										<c:when test="${adminID ne null}">
+											<a href="/faqviews/faq_infoInquiry_Contents?faq_no=${faq_contents.faq_no}" style="text-decoration: none; color: black; cursor: pointer;">
+												<c:out value="${faq_contents.faq_title}" />
+											</a>
+										</c:when>
+									
+										<c:otherwise>
 											<c:out value="${faq_contents.faq_title}" />
-										</a>
-									</c:if>
-									<c:out value="${faq_contents.faq_title}" />
+										</c:otherwise>
+									
+									</c:choose>
 								</td>
 								
 							<td></td>

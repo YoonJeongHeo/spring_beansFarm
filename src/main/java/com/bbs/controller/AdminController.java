@@ -497,7 +497,7 @@ public class AdminController {
 	
 	
 	/* 문의 분류 입력 */
-	@GetMapping("/Inquiry_insert")
+	@GetMapping("/Inquiry_classification/Inquiry_insert")
 	public String ic_insert(Inquiry_classificationDTO dto) {
 		
 		ic_service.ic_insert(dto);
@@ -507,7 +507,7 @@ public class AdminController {
 	
 	
 	/* 문의 분류 수정 */
-	@GetMapping("/Inquiry_update")
+	@GetMapping("/Inquiry_classification/Inquiry_update")
 	public String ic_update(Inquiry_classificationDTO dto) {
 		
 		ic_service.ic_update(dto);
@@ -516,7 +516,7 @@ public class AdminController {
 	}
 	
 	/* 문의 분류 삭제 */
-	@GetMapping("/Inquiry_delete")
+	@GetMapping("/Inquiry_classification/Inquiry_delete")
 	public String ic_delete(@RequestParam int ic_no) {
 
 		ic_service.ic_delete(ic_no);
