@@ -86,7 +86,7 @@ public class MypageController {
 		
 		System.out.println("주문내역 조회");
 		
-		List<P_orderDTO> myOrderHistory = orderService.myOrderList(m_no);
+		List<P_orderDTO> myOrderHistory = orderService.myOrderHistory(m_no);
 		
 		model.addAttribute("myOrderHistory", myOrderHistory);
 		
