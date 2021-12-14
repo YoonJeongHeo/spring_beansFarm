@@ -10,9 +10,18 @@
 <script src="../../../../resources/js/product/pdDetailsCon2.js" ></script>
 <script src="../../../../resources/js/product/pdDetailsConBuyNow.js" ></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-
-
-
+<!-- ==================================================================== -->
+	<table>
+	<c:forEach var="opList1" items="${opList}">
+	<tr>
+		<td>
+			${opList1.op_no}
+		</td>
+	
+	</tr>
+	</c:forEach>
+	</table>
+<!-- ==================================================================== -->
 	<div id="content">
           <div id="con1">
               <div class="top_r">
@@ -47,10 +56,14 @@
 							<option value="0">----------------------------------------</option>
 
 							<c:forEach var="opList" items="${opList}">
+							
+							
+							
 								<c:if test="${opList.oc_no eq 1}">
 									<option value="${opList.op_no}" class="opSelect">${opList.op_name}(
 										<c:if test="${opList.op_price > 0}">+</c:if><fmt:formatNumber value="${opList.op_price}" pattern="#,###" /> )
-										(남은 수량 : <c:if test="${opList.op_stock > 0}">${opList.op_stock}</c:if>)
+										(남은 수량 : <c:if test="${opList.op_stock > 0}">${opList.op_stock}</c:if><c:if test="${opList.op_stock == 0}">0</c:if>)
+										
 									</option>
 								</c:if>
 							</c:forEach>
