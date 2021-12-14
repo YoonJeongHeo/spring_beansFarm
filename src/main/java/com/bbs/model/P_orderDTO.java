@@ -23,10 +23,12 @@ public class P_orderDTO {
 	private Timestamp order_reg_date;
 	private Long p_no;
 	private int op_no1;
+	private int op_no;
 	private int option_quantity1;
 	private int op_no2;
 	private String p_return;
-	
+	private int op_stock;
+	private Long cart_no;
 	// 관리자페이지에서 전체 주문현황 보기위한 데이터 추가.
 	private String p_name;
 	private String m_id;	

@@ -230,6 +230,10 @@ function check_module(){
 	 var detailed_address = $("#detailed_address").val(); // 상세즈소
      var addr =  address + detailed_address// 통합주소	 
 	 var recipient_phone = $("#recipient_phone").val(); // 연락처
+     var op_no = $(".op_no").val();
+     var op_stock = $(".op_stock").val();
+     var cart_no = $(".cart_no").val();
+     
 	
 	//제품정보
 	var cart_noArr = new Array();
@@ -253,7 +257,8 @@ function check_module(){
        buyer_name : recipient_name,
        buyer_tel : recipient_phone,
        buyer_addr : addr,
-       buyer_postcode : postnum
+       buyer_postcode : postnum,
+       cart_no:cart_no 
 
    }, function(rsp){
 		if(rsp.success){//결제 성공시
@@ -269,12 +274,16 @@ function check_module(){
 						address:address,
 						detailed_address:detailed_address,
 						recipient_phone:recipient_phone,
-						cart_noArr:cart_noArr
+						cart_noArr:cart_noArr,
+						op_stock:op_stock,
+						op_no:op_no,
+						cart_no:cart_no
 						},
 				traditional:true,
 				async:false,
 		        success: function(data){
 					alert("결재가 되었습니다");
+					
 					location.href="../mypageviews/myShoppingList/myShopping_view";
 				  
 		        }, error: function() {

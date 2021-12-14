@@ -31,6 +31,7 @@
          	<c:forEach var="cartList" items="${cartList}">
          	 <tr>
          	 	<td width="10%" >
+         	 	<input type="text" name="cart_no" class="cart_no" value="${cartList.cart_no}">
          	 	<c:forEach var="productList" items="${productList}">
          	 		<c:if test="${cartList.p_no eq productList.p_no}"><img style="width: 100%; margin-left: 50%" src="/upload/product/${productList.p_thumbnail}"> 
          	 			<input type="hidden" name="cart_noList" class="cart_noList" value="${cartList.cart_no}">
@@ -49,12 +50,17 @@
          	 	</c:forEach>
          	 	/
          	 	<c:forEach var="opList" items="${opList}">
-         	 		<c:if test="${cartList.op_no2 eq opList.op_no}">${opList.op_name}</c:if>
+         	 		<c:if test="${cartList.op_no2 eq opList.op_no}">${opList.op_name} 
+         	 			<input type="text" value="${opList.op_no}" class="op_no" name="op_no">
+         	 			<input type="text" value="${opList.op_stock}" class="op_stock" name="op_stock">
+         	 		</c:if>
+         	 		
          	 	</c:forEach>
                 </td>
                 <td>${cartList.option_quantity1}</td>
                 <td><fmt:formatNumber value="${cartList.order_price}" pattern="#,###" />
                 <input type="hidden" name="order_price" class="order_price" value="${cartList.order_price}">
+                
                 </td>
             </tr>
          	

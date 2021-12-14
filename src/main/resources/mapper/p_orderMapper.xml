@@ -66,4 +66,10 @@
 		update p_order set p_return='y' where order_no=#{order_no}
 	</update>
 	
+	<update id="stockUpdate">
+		update cart c join p_option op on c.p_no = op.p_no 
+		set op_stock=(#{op_stock}-#{option_quantity1}) where cart_no = #{cart_no} and op_no = #{op_no}
+	</update>
+	
+	
 </mapper>

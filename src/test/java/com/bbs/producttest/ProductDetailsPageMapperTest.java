@@ -23,16 +23,7 @@ public class ProductDetailsPageMapperTest {
 	@Autowired
 	public ProductDetailsPageMapper mapper;
 
-	@Test
-	public void insertTest() {
-		ProductDetailsPageDTO dto = new ProductDetailsPageDTO();
-		
-		dto.setP_no(1);
-		dto.setPd_image("//////");
-		
 
-		mapper.insert(dto);
-	}
 	
 	@Test
 	public void selectTest() {

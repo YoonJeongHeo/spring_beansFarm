@@ -40,7 +40,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public CartDTO selectOne(Long cart_no) {
-		
+		System.out.println("impl------------------ " + cart_no);
 		return mapper.selectOne(cart_no);
 	}
 
