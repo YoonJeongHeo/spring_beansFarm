@@ -2,6 +2,8 @@ package com.bbs.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.bbs.model.P_orderDTO;
 import com.bbs.page.Criteria;
 import com.bbs.page.MypageCriteria;
@@ -23,6 +25,8 @@ public interface p_orderService {
 	public void updateNtoY(P_orderDTO orderDTO);
 
 	public void updateYtoN(P_orderDTO orderDTO);
+
+	public void stockUpdate(P_orderDTO p_DTO);
 
 
 	

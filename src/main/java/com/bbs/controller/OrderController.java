@@ -1,7 +1,6 @@
  package com.bbs.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bbs.model.AddressDTO;
 import com.bbs.model.CartDTO;
-import com.bbs.model.CategoryDTO;
 import com.bbs.model.MemberDTO;
 import com.bbs.model.POptionDTO;
 import com.bbs.model.P_orderDTO;
@@ -35,8 +33,7 @@ import com.bbs.service.p_orderService;
 @RequestMapping("/orderviews/*")
 public class OrderController {
 	
-	@Autowired
-	private p_orderService p_orderService;
+	
 	
 	@Autowired
 	private CartService cartService;
@@ -172,35 +169,34 @@ public class OrderController {
 			@RequestParam("address") String address,
 			@RequestParam("detailed_address") String detailed_address,
 			@RequestParam("recipient_phone") String recipient_phone,
-			
+			@RequestParam("op_stock") int op_stock,
+			@RequestParam("op_no") int op_no,
+			@RequestParam("cart_no") Long cart_no,
 			@RequestParam("cart_noArr") List<Long> cart_noArr
-			
-						
 			) {
 		
 		HttpSession session = request.getSession();
 		Long userNO = (Long) session.getAttribute("userNO");
 				
-		System.out.println("주문서 추가");
-		System.out.println("회원번호 : " + userNO);
-		System.out.println("주문번호 : " + order_id);
-		System.out.println("받는사람 : " + recipient_name);
-		System.out.println("우편번호 : " + postnum);
-		System.out.println("기본주소 : " + address);
-		System.out.println("상세주소 : " + detailed_address);
-		System.out.println("연락처 : " + recipient_phone);
-		System.out.println("장바구니번호 : " + cart_noArr);
+		System.out.println("111주문서 추가");
+		System.out.println("222회원번호 : " + userNO);
+		System.out.println("333주문번호 : " + order_id);
+		System.out.println("444받는사람 : " + recipient_name);
+		System.out.println("555우편번호 : " + postnum);
+		System.out.println("666기본주소 : " + address);
+		System.out.println("777상세주소 : " + detailed_address);
+		System.out.println("888연락처 : " + recipient_phone);
+		System.out.println("999장바구니번호 : " + cart_noArr);
 		
 		P_orderDTO p_DTO = new P_orderDTO();
 		p_DTO.setCart_noArr(cart_noArr);
-		System.out.println(p_DTO);
+		System.out.println("-------------------------------p_DTO :"+p_DTO);
+		
+	
 		
 		for(Long i : cart_noArr) {
-		CartDTO cartDTO = cartService.selectOne(i);
-		System.out.println(cartDTO);
-		}
-		
-		for(Long i : cart_noArr) {
+			System.out.println("controller 1내 ------ " + i);
+			System.out.println("111111111111");
 			p_DTO.setOrder_id(order_id);
 			p_DTO.setM_no(userNO);
 			p_DTO.setPostnum(postnum);
@@ -208,20 +204,27 @@ public class OrderController {
 			p_DTO.setDetailed_address(detailed_address);
 			p_DTO.setRecipient_name(recipient_name);
 			p_DTO.setRecipient_phone(recipient_phone);
-			
+			System.out.println("22222222222222");
+			System.out.println("controller 2내 ------ " + i);
 			CartDTO cartDTO = cartService.selectOne(i);
 			p_DTO.setP_no(cartDTO.getP_no());
 			p_DTO.setOp_no1(cartDTO.getOp_no1());
 			p_DTO.setOption_quantity1(cartDTO.getOption_quantity1());
 			p_DTO.setOp_no2(cartDTO.getOp_no2());
 			p_DTO.setOrder_price(cartDTO.getOrder_price());
+			p_DTO.setOp_no(op_no);
+			p_DTO.setOp_stock(op_stock);
+			p_DTO.setCart_no(i);
+			
 			orderService.orderInsert(p_DTO);
+			orderService.stockUpdate(p_DTO);
 			cartService.deleteOne(i);
+			System.out.println("33333333333" + i +"444444444" + p_DTO);
 		}
 		
 		
 		
-		return "/orderviews/insert";
+		return "success";
 	}
 	
 	

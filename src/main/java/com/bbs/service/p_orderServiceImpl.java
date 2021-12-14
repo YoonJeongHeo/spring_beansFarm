@@ -2,6 +2,7 @@ package com.bbs.service;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +62,15 @@ public class p_orderServiceImpl implements p_orderService{
 	@Override
 	public void updateYtoN(P_orderDTO orderDTO) {
 		p_orderMapper.updateYtoN(orderDTO);
+		
+	}
+
+	@Override
+	public void stockUpdate(P_orderDTO p_DTO) {
+		
+		
+		p_orderMapper.stockUpdate(p_DTO);
+		
 		
 	}
 	

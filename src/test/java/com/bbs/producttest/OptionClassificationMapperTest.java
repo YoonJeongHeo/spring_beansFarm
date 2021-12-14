@@ -55,10 +55,5 @@ public class OptionClassificationMapperTest {
 		
 	}
 	
-	@Test
-	public void deleteTest() {
-		OptionClassificationDTO dto = new OptionClassificationDTO();
-		
-		mapper.delete(1);
-	}
+
 }
