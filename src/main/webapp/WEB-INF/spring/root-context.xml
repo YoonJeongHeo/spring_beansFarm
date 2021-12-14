@@ -48,6 +48,8 @@
 				<prop key="mail.smtps.ssl.trust">*</prop>
 				<prop key="mail.debug">true</prop>
 				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.ssl.enabl+e">true</prop>
+				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
 			</props>
 		</property>
 

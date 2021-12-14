@@ -195,6 +195,7 @@ public class MemberController {
             helper.setText(content,true);
             mailSender.send(message);
             
+            
         }catch(Exception e) {
             e.printStackTrace();
         }
