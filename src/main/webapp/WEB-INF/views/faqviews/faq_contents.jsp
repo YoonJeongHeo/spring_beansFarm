@@ -226,7 +226,10 @@
 			var moveForm = $("#moveForm");
 			
 	        
+
 			let type = $("#searchBox select").val();
+
+
 	        let keyword = $("#keyword").val();
 
 			
