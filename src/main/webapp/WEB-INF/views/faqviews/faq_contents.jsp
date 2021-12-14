@@ -227,7 +227,7 @@
 			
 	        
 			let type = $(".searchBox select").val();
-	        let keyword = $("input[name='keyword']").val();
+	        let keyword = $("#keyword").val();
 
 			alert("type : " + type);
 			alert("keyword : " + keyword);
