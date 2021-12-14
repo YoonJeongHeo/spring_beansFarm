@@ -55,7 +55,6 @@ $(function() {
 		var ms_no = $("#membership_no").val();
 		
 		alert("삭제");
-		alert(ms_no);
 		$.ajax({
 			type : 'post',
 			data: {membership_no:ms_no},

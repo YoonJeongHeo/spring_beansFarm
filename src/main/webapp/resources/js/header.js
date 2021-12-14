@@ -46,18 +46,14 @@ $(function(){
 	$("#searchAction").click(function(){	
 		
 		var keyword = $(".realSearch").val(); 
-		alert(keyword); 
 		
 		$.ajax({
 				url : '/product/product_view',
 				type : 'get',
 				data : {keyword:keyword},
-				success : function(data) {
-					alert(data);
-					
+				success : function(data) {					
 					$("#mainSF").attr("action", "/product/product_view");
        				$("#mainSF").submit();
-					
 				}
 			})
 		

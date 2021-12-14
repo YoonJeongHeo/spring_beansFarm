@@ -4,7 +4,7 @@ $(function(){
 		$(".mycoco").css({"background-color" : "#FBDEDC", "font-weight": "bold", "font-size" : "1.5rem"}) 
 		$(".myShoppingList").css({"background-color" : "white", "font-weight": "nomal", "font-size" : "medium"})
 	
-		alert("!!");
+		
 	
 		
 	});
@@ -29,24 +29,19 @@ $(function(){
     });
 
 	$(".iBar").click(function() {
-		alert("!!");
 	});
 	
 	$(".iBar").click(function() {
-		alert("!!");
 	});
 
 	
 	$("#reviewBtn").click(function(){
 		
-		alert("!!");
 	});
 
 
 	$("#reviewDeleteBtn").click(function(){
-		alert("!!");
 	   
-
 	});
 
 

@@ -229,8 +229,6 @@
 			let type = $(".searchBox select").val();
 	        let keyword = $("#keyword").val();
 
-			alert("type : " + type);
-			alert("keyword : " + keyword);
 			
 			if(!type){
 	            alert("검색 종류를 선택하세요.");
@@ -247,9 +245,7 @@
 	        moveForm.find("input[name='keyword']").val(keyword);
 	        moveForm.find("input[name='pageNum']").val(1);
 			moveForm.attr("action", "/faqviews/faq_view");
-			alert("들어오니?")
 	        moveForm.submit();
-			alert("올거야 말거야?")
 	    });
 
 

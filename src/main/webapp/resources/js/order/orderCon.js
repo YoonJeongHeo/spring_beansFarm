@@ -180,7 +180,6 @@ $(function(){
 				
 				},
 				success : function(data) {
-					alert(data);
 					if(data == 1){
 						alert("신규 주소지가 추가되었습니다.");
 					}else if(data == 0){

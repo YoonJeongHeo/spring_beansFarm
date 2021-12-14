@@ -47,12 +47,9 @@ $(function(){
 		
 		var file = $("#r_photo").val();
 		
-		alert(file);
 		
 			if(!checkExtension(file)) {
-			
-			alert("!!!!!!에러");
-		
+					
 	        return false;
 
         }
