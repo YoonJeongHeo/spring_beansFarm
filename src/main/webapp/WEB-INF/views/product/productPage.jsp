@@ -13,7 +13,7 @@
                 <div>
             		<c:choose>
             			<c:when test='${pageMaker.cri.type == ""}'>
-            				<h1>전체 상품</h1>
+            				<h1>전체 제품</h1>
             			</c:when>
             			<c:otherwise>
             				<c:forEach var="categoryList" items="${categoryList}">

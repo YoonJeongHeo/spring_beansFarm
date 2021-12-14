@@ -25,13 +25,13 @@
                     <div id="myShoppingListForm">
                         <table class="mypageTabel">
                             <tr>
-                                <th width="40%" colspan="2">상품정보</th>
+                                <th width="40%" colspan="2">제품정보</th>
                                 <th width="13%">주문일자</th>
                                 <th width="13%">주문번호</th>
                                 <th width="14%" colspan="2">주문금액(수량)</th>
                                 <th width="20%" >후기작성</th>
                             </tr>
-							<!-- 상품사진,아카시아,날짜,주문번호, 금액+수량, 후기작성버튼. -->
+							<!-- 제품사진,아카시아,날짜,주문번호, 금액+수량, 후기작성버튼. -->
 							<c:forEach var="myOrderHistory" items="${myOrderHistory}">
 		             			
 				                <tr class="mypageTableHo">
@@ -104,7 +104,7 @@
                     <div id="myreviewListForm">
                         <table class="mypageTabel">
                             <tr>
-                                <th width="30%" colspan="2" style="">상품정보</th>
+                                <th width="30%" colspan="2" style="">제품정보</th>
                                 <th width="45%" >내용</th>
                                 <th width="5%" >별점</th>
                                 <th width="10%">수정</th>
@@ -115,7 +115,7 @@
                             <tr class="mypageTableHo">
                                 <td width="10%"> 
                                 <img src="/upload/review/${myreviewList.r_thumbnail}" width="150px" height="150px"></td>
-                                <td width="20%" >상품내용</td>
+                                <td width="20%" >제품내용</td>
                                 <td width="45%">
                                 	<ul> 
                                 		<li class="txtShort">제목 : ${myreviewList.r_title}</li>

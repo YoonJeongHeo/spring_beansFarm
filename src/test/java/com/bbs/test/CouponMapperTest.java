@@ -30,7 +30,7 @@ public class CouponMapperTest {
 	@Test
 	public void couponFirstInsert() {
 		
-		for(Long i=1L; i<=10; i++) {
+		for(Long i=1L; i<=3; i++) {
 			
 			couponMapper.couponFirstInsert(i);
 		}

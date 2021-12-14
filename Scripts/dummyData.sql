@@ -65,7 +65,7 @@ values(3, "콜롬비아 엑셀소 마운틴 워터 디카페인", 13000, "원두
 insert into product(category_no, p_name, p_price, p_manufacturer, origin_no, p_image, p_thumbnail)
 values(3, "브라질 마운틴 워터 디카페인", 14000, "원두팜", 4, "브라질디카페인.jpg", "t_브라질디카페인.jpg");
 
--- 상품옵션(용량선택) 1~8 
+-- 제옵션(용량선택) 1~8 
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "200g", 0, 10, 1);
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "500g", 1000, 10, 1);
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "1kg", 2000, 10, 1);
@@ -98,7 +98,7 @@ insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(8, "200g",
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(8, "500g", 1000, 10, 1);
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(8, "1kg", 2000, 10, 1);
 
--- 상품옵션(분쇄선택) 1~8 
+-- 제품옵션(분쇄선택) 1~8 
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "원두상태", 0, 10, 2);
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "프렌치프레스 분쇄", 0, 10, 2);
 insert into p_option(p_no, op_name, op_price, op_stock, oc_no) values(1, "드립 및 커피메이커", 0, 10, 2);
@@ -178,7 +178,7 @@ insert into notice (notice_title, notice_content, manager_no, notice_fix)
 values ("Beans Farm 프리미엄 신상입고!!", "프리미엄 원두 12종이 입고 되었습니다. \r\n\r\n스페셜티 싱글, 블렌드, 디카페인 라인 총 12종이 출시되었습니다. \r\n\r\n많은 관심 부탁드리겠습니다.", 1, "y");
 
 insert into notice (notice_title, notice_content, manager_no, notice_fix)
-values ("Beans Farm 교환 및 반품 안내", "커피를 반품하실 경우 상품 수령일 기준으로 7일 이내에 가능합니다. \r\n\r\n개인 기호(맟&향) 분쇄 옵션 등 선택을 잘못하였을 경우 교환 및 반품이 불가합니다. \r\n\r\n오배송 또는 제품하자가 있는 경우 고객센터로 연락주시기 바랍니다. \r\n\r\n항상 신선함을 유지하는 Beans Farm이 되겠습니다.", 1, "y");
+values ("Beans Farm 교환 및 반품 안내", "커피를 반품하실 경우 제품 수령일 기준으로 7일 이내에 가능합니다. \r\n\r\n개인 기호(맟&향) 분쇄 옵션 등 선택을 잘못하였을 경우 교환 및 반품이 불가합니다. \r\n\r\n오배송 또는 제품하자가 있는 경우 고객센터로 연락주시기 바랍니다. \r\n\r\n항상 신선함을 유지하는 Beans Farm이 되겠습니다.", 1, "y");
 
 insert into notice (notice_title, notice_content, manager_no, notice_fix)
 values ("Beans Farm 배송시간 안내", "저희 Beans Farm에서는 당일 오후 3시까지 주문된 사항은 당일 날 익일 배송이 가능합니다. \r\n\r\n주문 결제시 참고 부탁드리겠습니다. \r\n\r\n항상 신선함을 유지하는 Beans Farm이 되겠습니다.", 1, "y");
@@ -341,12 +341,8 @@ values(4, "회원으로 가입하면 어떤 혜택이 있나요?", " 신규 회�
 ");
 
 insert into faq(ic_no, faq_title, faq_content)
-values(4, "상품을 구입하려면 꼭 회원 가입을 해야 하나요?", " 회원만 구입이 가능합니다.
-비회원 상품 조회를 하실 수 있습니다.
-beansFarm의 회원의 경우,
-적립금 혜택, 각종 이벤트 참여기회 등 많은 혜택이 있으니
-회원가입 후 상품을 구입하는 것이 좋습니다.
-");
+values(4, "제품을 구입하려면 꼭 회원 가입을 해야 하나요?", " 회원만 구입이 가능합니다.
+비회원 제품 조회를 하실 수 있습니다.");
 
 insert into faq(ic_no, faq_title, faq_content)
 values(4, "개인정보를 변경하고 싶어요.", " 개인정보 변경은

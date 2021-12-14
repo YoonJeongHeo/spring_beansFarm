@@ -29,16 +29,14 @@ public class AdminMapperTest {
 	@Test
 	public void adminInsertTest() {
 		
-		for(int i=1; i<=10; i++) {
-			AdminDTO adminDTO = new AdminDTO();
-			
-			
-			adminDTO.setManager_id("admin"+i);
-			adminDTO.setManager_pw(pwencoder.encode("apw"+i));
-			adminDTO.setManager_name("adminname"+i);
-			
-			adminMapper.adminInsert(adminDTO);
-		}
+		AdminDTO adminDTO = new AdminDTO();
+		
+		
+		adminDTO.setManager_id("admin");
+		adminDTO.setManager_pw(pwencoder.encode("apw"));
+		adminDTO.setManager_name("관리자");
+		
+		adminMapper.adminInsert(adminDTO);
 	}
 	
 //	@Test

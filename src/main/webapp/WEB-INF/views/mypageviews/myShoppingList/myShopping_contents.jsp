@@ -20,7 +20,7 @@
                     
                         <table class="mypageTabel">
                             <tr>
-                                <th width="40%" colspan="2">상품정보</th>
+                                <th width="40%" colspan="2">제품정보</th>
                                 <th width="13%">주문일자</th>
                                 <th width="13%">주문번호</th>
                                 <th width="14%" colspan="2">주문금액(수량)</th>
