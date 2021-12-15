@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.errorImg{position:relative; height:10rem; width: 100%;}
+
+.errorImg img{position:absolute; top:100%; left:32%; margin: auto;}
+
+
+/* 모바일 화면 */
+@media screen and (max-width:600px) {
+
+
+
+
+}

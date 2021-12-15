@@ -56,6 +56,21 @@
 		<filter-name>encodingFilter</filter-name> 
 		<url-pattern>/*</url-pattern> 
 	</filter-mapping>
-      
+	
+    <!-- Error -->
+    
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errorviews/no-resource</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errorviews/server-error</location>
+	</error-page>
+
+	<error-page>
+		<location>/errorviews/default-error</location>
+	</error-page>
 
 </web-app>
