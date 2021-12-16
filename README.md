@@ -9,6 +9,8 @@ Spring MVC 쇼핑몰 프로젝트
 [주요 기능](#주요-기능)  
 [링크](#링크)  
 [외부 리소스](#외부-리소스)
+[피피티 자료](#피피티-자료)
+
 
 ## 프로젝트 소개
 
@@ -100,3 +102,7 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 - 아이콘 - [https://fontawesome.com/](https://fontawesome.com/)
 - 상품 이미지 - [https://www.xn--sh1bx7bj4cm6h09ezw0a.com/](https://www.xn--sh1bx7bj4cm6h09ezw0a.com/) ,
                [https://www.coffeecg.com/index.html](https://www.coffeecg.com/index.html)
+
+## 피피티 자료
+
+- 상단의 팀프로젝트(원두팜).pdf 참조
