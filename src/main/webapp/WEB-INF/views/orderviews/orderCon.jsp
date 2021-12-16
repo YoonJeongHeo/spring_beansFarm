@@ -31,7 +31,7 @@
 							<td>
 							
 							<c:if test="${cartList.op_no1 eq opList.op_no}">
-							<input type="text" value="${opList.op_no}" class="op_no" name="op_no">
+							<input type="hidden" value="${opList.op_no}" class="op_no" name="op_no">
 							</c:if>
 							
 							</td>
@@ -53,7 +53,7 @@
          	<c:forEach var="cartList" items="${cartList}">
          	 <tr>
          	 	<td width="10%" >
-         	 	<input type="text" name="cart_no" class="cart_no" value="${cartList.cart_no}">
+         	 	<input type="hidden" name="cart_no" class="cart_no" value="${cartList.cart_no}">
          	 	<c:forEach var="productList" items="${productList}">
          	 		<c:if test="${cartList.p_no eq productList.p_no}"><img style="width: 100%; margin-left: 50%" src="/upload/product/${productList.p_thumbnail}"> 
          	 			<input type="hidden" name="cart_noList" class="cart_noList" value="${cartList.cart_no}">
@@ -74,7 +74,7 @@
          	 	<c:forEach var="opList" items="${opList}">
          	 		<c:if test="${cartList.op_no2 eq opList.op_no}">${opList.op_name} 
          	 			
-         	 			<input type="text" value="${opList.op_stock}" class="op_stock" name="op_stock">
+         	 			<input type="hidden" value="${opList.op_stock}" class="op_stock" name="op_stock">
          	 		</c:if>
          	 		
          	 	</c:forEach>
