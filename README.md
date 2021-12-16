@@ -1,6 +1,5 @@
 # spring_beansFarm
 
-# yiTeamProject
 Spring MVC 쇼핑몰 프로젝트
 
 ## 차례
