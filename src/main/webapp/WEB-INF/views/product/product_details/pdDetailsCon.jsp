@@ -10,18 +10,6 @@
 <script src="../../../../resources/js/product/pdDetailsCon2.js" ></script>
 <script src="../../../../resources/js/product/pdDetailsConBuyNow.js" ></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
-<!-- ==================================================================== -->
-	<table>
-	<c:forEach var="opList1" items="${opList}">
-	<tr>
-		<td>
-			${opList1.op_no}
-		</td>
-	
-	</tr>
-	</c:forEach>
-	</table>
-<!-- ==================================================================== -->
 	<div id="content">
           <div id="con1">
               <div class="top_r">
