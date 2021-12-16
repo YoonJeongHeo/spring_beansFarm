@@ -100,8 +100,7 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 ## 외부 리소스
 
 - 아이콘 - [https://fontawesome.com/](https://fontawesome.com/)
-- 상품 이미지 - [https://www.xn--sh1bx7bj4cm6h09ezw0a.com/](https://www.xn--sh1bx7bj4cm6h09ezw0a.com/) ,
-               [https://www.coffeecg.com/index.html](https://www.coffeecg.com/index.html)
+
 
 ##  자료
 
