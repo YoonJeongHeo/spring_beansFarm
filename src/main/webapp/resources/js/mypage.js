@@ -55,20 +55,7 @@ $(function(){
 		});
 		
 	
-	$("#search").click(function() {
-	    $("#popup").fadeIn();
-	    $(".realSearch").focus();
-    });
 
-	$("#popup").click(function() {
-		$("#popup").fadeOut();
-    });
-
-	$(".iBar").click(function() {
-	});
-	
-	$(".iBar").click(function() {
-	});
 
 	
 

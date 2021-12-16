@@ -19,7 +19,7 @@
         <div class="searchForm">
             <form action="" method="get" id="mainSF">
 
-                <input type="text" name="keyword" class="realSearch" placeholder="제품검색">
+                <input type="text" name="keyword" class="realSearch" placeholder="제품검색" autocomplete="off">
                 <i class="fas fa-search fa-3x" id="searchAction"></i>
                 <hr>
            

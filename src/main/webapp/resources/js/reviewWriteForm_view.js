@@ -1,49 +1,45 @@
 $(function(){
 	
-	
-	$("#search").click(function() {
-	    $("#popup").fadeIn();
-	    $(".realSearch").focus();
-    });
-
-
-	$("#popup").click(function() {
-		$("#popup").fadeOut();
-    });
-
-
 	var regex = new RegExp("(.*?)\.(jpg|png)$");
-	
-	
-	
-	
+	var pattern = new RegExp(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi);
 		/* 파일업로드 체크 */	
 		
 	function checkExtension(fileName){
 		alert("파일업로드체크");
-		if(fileName.isempty()){
-			alert("리뷰를 남겨주셔서 감사합니다");
-			return true;
-			
-		} else if(!regex.test(fileName)){
+		alert("============ fileName :"+fileName);
+		
+		
+		if(!regex.test(fileName)){
 		
 			alert("이미지형식을 jpg나 png로 해주세요");
 			return false;
 		
 		}
 		
+		if(pattern.test(fileName)){
+			
+			alert("이미지형식을 jpg나 png로 해주세요");
+			return false;
+		}
+		
+		if(fileName.isempty()){
 			alert("리뷰를 남겨주셔서 감사합니다");
 			return true;
+			
+		}
 		
+		alert("리뷰를 남겨주셔서 감사합니다");
+		return true;
+	
 	}
-
-		/* 파일업로드 이벤트 막기 */
-	$("#reviewFinalCheck").on("click",function(e){
 		
 		
 		
 	
-		
+
+		/* 파일업로드 이벤트 막기 */
+	$("#reviewFinalCheck").on("click",function(e){
+		e.preventDefault();
 		
 		var file = $("#r_photo").val();
 		

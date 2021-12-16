@@ -1,10 +1,6 @@
 $(function(){
 	
-	$("#test").on("click",function(){
-		
-			var r_no = $('#test').val();
-					
-	});
+
 	
 	$(".reDelBtn2").on("click",function(event){
 			
@@ -33,15 +29,7 @@ $(function(){
 			
 		});
 	
-	
-	$("#search").click(function() {
-	    $("#popup").fadeIn();
-	    $(".realSearch").focus();
-    });
 
-	$("#popup").click(function() {
-		$("#popup").fadeOut();
-    });
 
 	
 

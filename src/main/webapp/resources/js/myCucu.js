@@ -19,31 +19,7 @@ $(function(){
 	});
 	
 	
-	$("#search").click(function() {
-	    $("#popup").fadeIn();
-	    $(".realSearch").focus();
-    });
-
-	$("#popup").click(function() {
-		$("#popup").fadeOut();
-    });
-
-	$(".iBar").click(function() {
-	});
 	
-	$(".iBar").click(function() {
-	});
-
-	
-	$("#reviewBtn").click(function(){
-		
-	});
-
-
-	$("#reviewDeleteBtn").click(function(){
-	   
-	});
-
 
 	
 
