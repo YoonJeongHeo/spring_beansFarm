@@ -102,7 +102,7 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 - 아이콘 - [https://fontawesome.com/](https://fontawesome.com/)
 
 
-##  자료
+## 추가 자료
 
 - ppt: 팀프로젝트(원두팜).pdf 참조
 - 노션(회의, 팀원자료공유) : https://www.notion.so/21-10-25-12-15-ab9980352e8b49a1b23d0aa85824a854
