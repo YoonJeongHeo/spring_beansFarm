@@ -20,7 +20,6 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 
 - Spring Framework 5.2.6
 - JDK 8u202
-- Maven 3.8.4
 - Server: Tomcat (9.0)
 
 ### 구성원
