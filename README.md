@@ -9,7 +9,7 @@ Spring MVC 쇼핑몰 프로젝트
 [주요 기능](#주요-기능)  
 [링크](#링크)  
 [외부 리소스](#외부-리소스)
-[피피티 자료](#피피티-자료)
+[추가 자료](#-자료)
 
 
 ## 프로젝트 소개
@@ -21,7 +21,7 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 - Spring Framework 5.2.6
 - JDK 8u202
 - Maven 3.8.4
-- Server: CentOS8, Docker (20.10.11), Tomcat (8.5.69), MariaDB (latest), Nginx (latest), Jenkins (lts)
+- Server: Tomcat (9.0)
 
 ### 구성원
 
@@ -34,7 +34,7 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 
 ### 기간
 
-- 2021-11-03~2021-12-17 (약 7주)
+- 2021-10-25~2021-12-17 (약 2달)
 
 ## 적용해본 것
 
@@ -103,6 +103,6 @@ Spring Framework 를 활용하여 쇼핑몰 사이트를 제작해 보았습니�
 - 상품 이미지 - [https://www.xn--sh1bx7bj4cm6h09ezw0a.com/](https://www.xn--sh1bx7bj4cm6h09ezw0a.com/) ,
                [https://www.coffeecg.com/index.html](https://www.coffeecg.com/index.html)
 
-## 피피티 자료
+##  자료
 
 - 상단의 팀프로젝트(원두팜).pdf 참조
