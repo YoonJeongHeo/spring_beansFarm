@@ -27,7 +27,7 @@
                             </tr>
                             
                          <c:forEach var="myreviewListAll" items="${myreviewListAll}">
-                
+               
                             <tr class="mypageTableHo">
               
                                 <td width="10%"> 
@@ -69,7 +69,7 @@
 										</c:choose>
                                 
                                 </td>
-                                <td width="10%"><button id="reviewUpdateBtn2" onclick="location.href='/mypageviews/myReviewList/reviewUpdateForm_view?r_no=${myreviewListAll.r_no}'">수정</button></td>
+                                <td width="10%"><button id="reviewUpdateBtn2" onclick="location.href='/mypageviews/myReviewList/reviewUpdateForm_view?r_no=${myreviewListAll.r_no}&order_no=${myreviewListAll.order_no}'">수정</button></td>
                                 <td width="10%" ><button class="reDelBtn" id="reviewDeleteBtn" value="${myreviewListAll.r_no}">삭제</button></td>
 
                             </tr>

@@ -244,11 +244,15 @@ public class MypageController {
 
 	// 후기 업데이트.
 	@GetMapping("/myReviewList/reviewUpdateForm_view")
-	public String reviewUpdateForm(@RequestParam(value = "r_no", required = false) String r_no, HttpServletRequest request, Model model) {
+	public String reviewUpdateForm(
+			@RequestParam("order_no") Long order_no, 
+			@RequestParam(value = "r_no", required = false) String r_no,
+			Model model,
+			P_orderDTO oderDTO) {
 	
-		HttpSession session = request.getSession();
-		
-		Long m_no = (Long)session.getAttribute("userNo");
+		List<P_orderDTO> selectOne = orderService.selectOne(order_no);
+		System.out.println("진짜 마지막 확인용 selectOne :" + selectOne);
+		model.addAttribute("selectOne", selectOne);
 			
 		
 		ReviewDTO dto = reviewService.my_review_update_form(Long.parseLong(r_no));

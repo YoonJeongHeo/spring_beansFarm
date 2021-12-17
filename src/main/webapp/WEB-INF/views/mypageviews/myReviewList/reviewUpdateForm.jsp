@@ -14,7 +14,9 @@
 	<form action="/mypageviews/myReviewList/reviewUpdate" method="post" id="reviewUpdate" enctype="multipart/form-data" > 
 		<table class="mypageTabel">
 			<tr >
-				<td style="width: 20%">(사진)</td><td style="width: 80%">제품이름설명 </td>
+				<c:forEach var="selectOne" items="${selectOne}">
+					<td style="width: 20%"> <img src="/upload/product/${selectOne.p_thumbnail}" style="width:100px; height: 100px;"> </td><td style="width: 80%">${selectOne.p_name} </td>
+				</c:forEach>
 			</tr>		
 			<tr>
 				
