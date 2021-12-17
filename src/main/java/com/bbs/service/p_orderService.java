@@ -35,6 +35,8 @@ public interface p_orderService {
 
 	public int getTotalM_no(Long m_no);
 
+	public List<P_orderDTO> selectOne(Long order_no);
+
 	
 	
 }

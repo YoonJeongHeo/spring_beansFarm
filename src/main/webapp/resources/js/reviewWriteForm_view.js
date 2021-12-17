@@ -42,7 +42,8 @@ $(function(){
 				}
 				
 			
-			
+				alert("리뷰를 남겨주셔서 감사합니다");
+				return true;
 		});
 		
 		

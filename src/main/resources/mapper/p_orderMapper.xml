@@ -88,5 +88,9 @@
 		select count(*) from product p left join p_order po on p.p_no = po.p_no where m_no = #{m_no}
 	</select>
 	
+	<select id="selectOne" resultType="com.bbs.model.P_orderDTO">
+		select * from p_order po join product p on po.p_no =p.p_no where order_no = #{order_no}
+	</select>
+	
 	
 </mapper>

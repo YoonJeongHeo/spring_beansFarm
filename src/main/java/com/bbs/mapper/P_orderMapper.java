@@ -35,6 +35,8 @@ public interface P_orderMapper {
 
 	public int getTotal(Criteria cri);
 
+	public List<P_orderDTO> selectOne(Long order_no);
+
 
 
 

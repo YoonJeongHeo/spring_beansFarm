@@ -91,6 +91,14 @@ public class p_orderServiceImpl implements p_orderService{
 		
 		return p_orderMapper.getTotalM_no(m_no);
 	}
+
+	@Override
+	public List<P_orderDTO> selectOne(Long order_no) {
+		
+		
+		return p_orderMapper.selectOne(order_no);
+		
+	}
 	
 	
 

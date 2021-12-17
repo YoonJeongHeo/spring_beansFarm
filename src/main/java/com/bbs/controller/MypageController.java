@@ -190,6 +190,13 @@ public class MypageController {
 	public String reviewWriteForm(Model model,  P_orderDTO oderDTO,
 			@RequestParam("order_no") Long order_no) {
 		
+		List<P_orderDTO> selectOne = orderService.selectOne(order_no);
+		System.out.println("진짜 마지막 확인용 selectOne :" + selectOne);
+		model.addAttribute("selectOne", selectOne);
+		
+		
+		model.addAttribute(uploadPath, order_no);
+		
 		System.out.println("리뷰페이지 바로가기!");
 		System.out.println("order_no : " +  order_no);
 		System.out.println(oderDTO.getOrder_no());
