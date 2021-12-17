@@ -1,58 +1,60 @@
 $(function(){
 	
-	var regex = new RegExp("(.*?)\.(jpg|png)$");
-	var pattern = new RegExp(/[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/gi);
-		/* 파일업로드 체크 */	
-		
-	function checkExtension(fileName){
-		alert("파일업로드체크");
-		alert("============ fileName :"+fileName);
-		
-		
-		if(!regex.test(fileName)){
-		
-			alert("이미지형식을 jpg나 png로 해주세요");
-			return false;
-		
-		}
-		
-		if(pattern.test(fileName)){
-			
-			alert("이미지형식을 jpg나 png로 해주세요");
-			return false;
-		}
-		
-		if(fileName.isempty()){
-			alert("리뷰를 남겨주셔서 감사합니다");
-			return true;
-			
-		}
-		
-		alert("리뷰를 남겨주셔서 감사합니다");
-		return true;
-	
-	}
-		
-		
-		
-	
-
-		/* 파일업로드 이벤트 막기 */
-	$("#reviewFinalCheck").on("click",function(e){
-		e.preventDefault();
+	/* 파일업로드 체크 */	
+	$(function upload() {
 		
 		var file = $("#r_photo").val();
+		var regex = new RegExp("(.*?)\.(jpg|png)$");
+		var pattern = new RegExp(/[\{\}\[\]\/?,;\)*~`!^\-_+<>@\#$%&\=\(\'\"]/gi);
 		
-		
-			if(!checkExtension(file)) {
+		/* 파일업로드 이벤트 막기 */
+		$("#reviewFinalCheck").on("click",function(e){
+			
+				
+				if(pattern.test(file)){
 					
-	        return false;
+					alert("파일명에 특수문자가 포함되어 있습니다");
+					return false;
+					
+				}else if(regex.test(file)){		
+					e.preventDefault();
+					alert("리뷰를 남겨주셔서 감사합니다");
+					
+					$('#reviewWriteForm').submit();
+					return true;
+					
+				}else if(file.isempty()){
+					e.preventDefault();
+					alert("리뷰를 남겨주셔서 감사합니다");
+					
+					$('#reviewWriteForm').submit();
+					
+					return true;
+					
+				}
 
-        }
-
-		return true;
+				if(!regex.test(file)){
+				
+					alert("이미지형식을 jpg나 png로 해주세요");
+					
+					return false;
+				
+				}
+				
+			
+			
+		});
 		
-	});
+		
+		
+	})
+	
+	
+		
+		
+		
+	
+
 	
 	var starRating = function(){
 	var $star = $(".star-input"),
@@ -96,5 +98,4 @@ starRating();
 });
 		
 		
-
 

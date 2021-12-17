@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.bbs.model.P_orderDTO;
+import com.bbs.model.ProductDTO;
 import com.bbs.page.Criteria;
 import com.bbs.page.MypageCriteria;
 
@@ -16,11 +17,9 @@ public interface P_orderMapper {
 
 	public List<P_orderDTO> adminOrderListPage(Criteria cri);
 
-	public int getTotal(Criteria cri);
-
 	public List<P_orderDTO> myOrderList(Long m_no);
 
-	public List<P_orderDTO> myAllOrderList(@Param("m_no") Long m_no, @Param("cri") MypageCriteria cri);
+	public List<P_orderDTO> myAllOrderList(MypageCriteria cri);
 
 	public void updateNtoY(P_orderDTO orderDTO);
 
@@ -29,6 +28,13 @@ public interface P_orderMapper {
 	public void stockUpdate(P_orderDTO p_DTO);
 	
 	public List<P_orderDTO> myOrderHistory(Long m_no);
+
+	public List<ProductDTO> myAllOrderHistory(MypageCriteria cri);
+
+	public int getTotalM_no(Long m_no);
+
+	public int getTotal(Criteria cri);
+
 
 
 

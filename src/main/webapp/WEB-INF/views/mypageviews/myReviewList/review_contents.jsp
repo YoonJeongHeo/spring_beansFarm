@@ -90,7 +90,7 @@
 			<tr>
 				<td>등록</td>
 				<td> 
-				<input type="hidden" name="order_no" value="${order_no}"> 
+				<input type="text" name="order_no" value="${order_no}"> 
 				<input type="hidden" name="m_no" value="${userNO}" readonly="readonly"> 
 				<input type="submit" value="등록하기" id="reviewFinalCheck"> 
 				</td>

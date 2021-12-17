@@ -44,5 +44,9 @@ public class P_orderDTO {
 	private String p_image;
 	private String p_thumbnail;
 	
-	
+	//리뷰
+	private String r_thumbnail;
+	private String r_title;
+	private String r_content;
+	private int r_star;
 }
