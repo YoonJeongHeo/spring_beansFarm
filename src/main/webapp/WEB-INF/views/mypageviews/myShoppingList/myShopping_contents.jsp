@@ -53,37 +53,35 @@
                        
                         
                         
-                    </div>
-                   <br>
-                    <div class="pageInfo">
-				
-						<c:if test="${pageMaker.prev}">
-							<li><a href="${pageMaker.startPage -1}">이전</a></li>
-							<!-- 이전버튼이 있는데 이 버튼을 누르면 시작페이지에서 마이너스1을 해줘야 넘어간다. -->
-						</c:if>
-				
-						<c:forEach var="num" begin="${pageMaker.startPage}"
-							end="${pageMaker.endPage}">
-							<li><a href="${num}">${num}</a></li>
-						</c:forEach>
-				
-						<c:if test="${pageMaker.next}">
-							<li><a href="${pageMaker.endPage +1}">다음</a></li>
-							<!-- 다음버튼이 있는데 이 버튼을 누르면 시작페이지에서 마이너스1을 해줘야 넘어간다. -->
-						</c:if>
-				
-					</div>
+                   			</div>
+		                    <br>
+		                    <div class="pageInfo">
+						
+								<c:if test="${pageMaker.prev}">
+									<li><a href="${pageMaker.startPage -1}">이전</a></li>
+									<!-- 이전버튼이 있는데 이 버튼을 누르면 시작페이지에서 마이너스1을 해줘야 넘어간다. -->
+								</c:if>
+						
+								<c:forEach var="num" begin="${pageMaker.startPage}"
+									end="${pageMaker.endPage}">
+									<li><a href="${num}">${num}</a></li>
+								</c:forEach>
+						
+								<c:if test="${pageMaker.next}">
+									<li><a href="${pageMaker.endPage +1}">다음</a></li>
+									<!-- 다음버튼이 있는데 이 버튼을 누르면 시작페이지에서 마이너스1을 해줘야 넘어간다. -->
+								</c:if>
+						
+							</div>
+								
+	                    <form method="get" class="moveForm">
+						
+							<!-- 엑션이 있어야지 값이 넘어가잖아 하지만 a태그를 눌렀을 때 액션이라는걸 추가해서 요 버튼을 눌렀을 때  -->
+							<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
+							<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
 					
-                    <form method="get" class="moveForm">
-					
-						<!-- 엑션이 있어야지 값이 넘어가잖아 하지만 a태그를 눌렀을 때 액션이라는걸 추가해서 요 버튼을 눌렀을 때  -->
-						<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum }">
-						<input type="hidden" name="amount" value="${pageMaker.cri.amount }">
-				
-					</form>
-                        
-                        
-                        
+						</form>
+	                        
                         
                     </div>
                     

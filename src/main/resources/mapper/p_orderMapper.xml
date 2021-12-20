@@ -55,7 +55,7 @@
 	</select>
 	
 	<select id="myAllOrderList" resultType="com.bbs.model.P_orderDTO">
-		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no} limit 0, 10
+		select * from p_order o join product p on o.p_no = p.p_no where o.m_no = #{m_no} limit #{skip}, #{amount}
 	</select>
 	
 	<select id="myOrderHistory" resultType="com.bbs.model.P_orderDTO">
@@ -77,6 +77,20 @@
 		update cart c join p_option op on c.p_no = op.p_no 
 		set op_stock=( op_stock - option_quantity1 ) where cart_no = #{cart_no} and op_no = #{op_no}
 	</update>
+	
+	<select id="myAllOrderHistory" resultType="com.bbs.model.P_orderDTO">
+		select *
+		from product p left join p_order po on p.p_no = po.p_no
+		where m_no = #{m_no} limit #{skip}, #{amount}
+	</select>
+	
+	<select id="getTotalM_no" resultType="int">
+		select count(*) from product p left join p_order po on p.p_no = po.p_no where m_no = #{m_no}
+	</select>
+	
+	<select id="selectOne" resultType="com.bbs.model.P_orderDTO">
+		select * from p_order po join product p on po.p_no =p.p_no where order_no = #{order_no}
+	</select>
 	
 	
 </mapper>

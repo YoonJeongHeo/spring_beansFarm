@@ -112,11 +112,11 @@ public class MypageController {
 		
 		cri.setM_no(m_no);
 //		List<ProductDTO> myAllOrderHistory = orderHistoryService.myAllOrderHistory(cri);
-		List<P_orderDTO> myAllOrderHistory = orderService.myAllOrderList(m_no, cri);
+		List<P_orderDTO> myAllOrderHistory = orderService.myAllOrderList(cri);
 		
 		model.addAttribute("myAllOrderHistory", myAllOrderHistory);
 		
-		int total = orderHistoryService.getTotal(m_no);
+		int total = orderService.getTotalM_no(m_no);
 		
 		System.out.println("========================= myAllOrderHistory :" + myAllOrderHistory);
 		System.out.println("========================= total :" + total);
@@ -186,12 +186,19 @@ public class MypageController {
 	
 	
 	// 리뷰쓰는곳 들어가기
-	@PostMapping("/myReviewList/reviewWriteForm_view")
+	@GetMapping("/myReviewList/reviewWriteForm_view")
 	public String reviewWriteForm(Model model,  P_orderDTO oderDTO,
 			@RequestParam("order_no") Long order_no) {
 		
+		List<P_orderDTO> selectOne = orderService.selectOne(order_no);
+		System.out.println("진짜 마지막 확인용 selectOne :" + selectOne);
+		model.addAttribute("selectOne", selectOne);
+		
+		
+		model.addAttribute(uploadPath, order_no);
+		
 		System.out.println("리뷰페이지 바로가기!");
-		System.out.println("order_no ddfdfdfdfd : " +  order_no);
+		System.out.println("order_no : " +  order_no);
 		System.out.println(oderDTO.getOrder_no());
 		model.addAttribute("order_no",oderDTO.getOrder_no());
 		
@@ -237,11 +244,15 @@ public class MypageController {
 
 	// 후기 업데이트.
 	@GetMapping("/myReviewList/reviewUpdateForm_view")
-	public String reviewUpdateForm(@RequestParam(value = "r_no", required = false) String r_no, HttpServletRequest request, Model model) {
+	public String reviewUpdateForm(
+			@RequestParam("order_no") Long order_no, 
+			@RequestParam(value = "r_no", required = false) String r_no,
+			Model model,
+			P_orderDTO oderDTO) {
 	
-		HttpSession session = request.getSession();
-		
-		Long m_no = (Long)session.getAttribute("userNo");
+		List<P_orderDTO> selectOne = orderService.selectOne(order_no);
+		System.out.println("진짜 마지막 확인용 selectOne :" + selectOne);
+		model.addAttribute("selectOne", selectOne);
 			
 		
 		ReviewDTO dto = reviewService.my_review_update_form(Long.parseLong(r_no));

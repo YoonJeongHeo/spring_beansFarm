@@ -13,7 +13,7 @@
 		where m_no = #{m_no} limit #{skip}, #{amount}
 	</select>
 	
-	<select id="getTotal" resultType="int">
+	<select id="getTotalM_no" resultType="int">
 		select count(*) from product p left join p_order po on p.p_no = po.p_no where m_no = #{m_no}
 	</select>
 	

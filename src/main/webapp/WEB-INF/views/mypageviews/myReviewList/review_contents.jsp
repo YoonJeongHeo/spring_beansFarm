@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <link rel="stylesheet" href="../../../../resources/css/mypage/reviewWriteForm.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -10,7 +11,9 @@
 	<form action="/mypageviews/myReviewList/reviewInsert" method="post" id="reviewWriteForm" enctype="multipart/form-data"> 
 		<table class="mypageTabel">
 			<tr >
-				<td style="width: 20%">(사진)</td><td style="width: 80%">제품이름설명 </td>
+			<c:forEach var="selectOne" items="${selectOne}">
+				<td style="width: 20%"> <img src="/upload/product/${selectOne.p_thumbnail}" style="width:100px; height: 100px;"> </td><td style="width: 80%">${selectOne.p_name} </td>
+			</c:forEach>
 			</tr>		
 			<tr>
 				

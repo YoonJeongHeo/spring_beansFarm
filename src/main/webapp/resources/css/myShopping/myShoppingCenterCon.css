@@ -1,5 +1,27 @@
 @charset "UTF-8";
 
+.pageInfo {
+	display: flex;
+	 justify-content: center;
+}
+
+.pageInfo li {
+    /* border: 1px solid red; */
+    text-transform: none;
+    display: flex;
+    justify-content: center;
+    margin: 0% 0.5%;
+   
+}
+
+.pageInfo li a{
+	 text-decoration : none;
+	 color: black;
+}
+
+.pageInfo li a:hover {
+	color: red;
+}
 
 
 #con2 {

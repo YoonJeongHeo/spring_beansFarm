@@ -21,8 +21,9 @@
 					alert("허용되지 않는 확장자")
 					return false;
 				}
+				
 				if(pattern.test(file)){
-					alert("파일명에 특수문자가 포험되어 있습니다")
+					alert("파일명에 특수문자가 포함되어 있습니다")
 					return false;
 				}
 				return true;

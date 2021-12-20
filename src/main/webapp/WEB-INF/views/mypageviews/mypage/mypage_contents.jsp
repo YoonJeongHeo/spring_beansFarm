@@ -148,7 +148,7 @@
 											</c:when>
 										</c:choose>
                                 </td>
-                                <td width="10%"><button type="button" id="reviewUpdateBtn"  onclick="location.href='/mypageviews/myReviewList/reviewUpdateForm_view?r_no=${myreviewList.r_no}'">수정</button></td>
+                                <td width="10%"><button type="button" id="reviewUpdateBtn"  onclick="location.href='/mypageviews/myReviewList/reviewUpdateForm_view?r_no=${myreviewList.r_no}&order_no=${myreviewList.order_no}'">수정</button></td>
                                 <td width="10%" ><button class="reDelBtn" id="reviewDeleteBtn" value="${myreviewList.r_no}">삭제</button></td>
                             </tr>
 							<!-- onclick="location.href='/mypageviews/reviewDelete?r_no=${myreviewList.r_no}'" -->
