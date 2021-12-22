@@ -252,7 +252,7 @@ function check_module(){
        pay_method : 'card', //card(신용카드), trans(실시간계좌이체), vbank(가상계좌), phone(휴대폰소액결제)
        merchant_uid : order_id, //상점에서 관리하시는 고유 주문번호를 전달
        name : '(주)BeansFarm',
-       amount : 100, // 변경해야함~!!!!!!!!!!!!!!
+       amount : totalPrice, // 변경해야함~!!!!!!!!!!!!!! totalPrice
        buyer_name : recipient_name,
        buyer_tel : recipient_phone,
        buyer_addr : addr,
