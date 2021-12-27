@@ -1,9 +1,6 @@
 package com.bbs.controller;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,8 +25,6 @@ import com.bbs.page.MypageViewPage;
 import com.bbs.page.ViewPage;
 import com.bbs.service.Inquiry_classificationService;
 import com.bbs.service.QnaService;
-
-import net.coobird.thumbnailator.Thumbnailator;
 
 
 @Controller

@@ -128,6 +128,11 @@ textarea{
 	
 }
 
+#qna_content_div img {
+	width: 500px;
+	height: auto;
+}
+
 #qna_con_mh{
 	margin-top: 3%;
 	margin-bottom: 3%;

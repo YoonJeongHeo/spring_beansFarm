@@ -1,20 +1,9 @@
 @charset "UTF-8";
 
-/* #conter {
-    width: 100%;
-    min-height : 80vw;
-    height : auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border: 1px solid red;
-}  */
-
 #content {
     width: 80%;
     margin: 0 auto;
-    min-height : 80vw;
+    min-height : 100vw;
     height : auto;
     margin-top: 10%;
     /* border: 1px solid red; */

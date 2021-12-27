@@ -87,24 +87,6 @@
  						<br>
 				        <p>${dto.q_answer}</p>
  						
- 						
-                      <%-- <table id="noticeTbl" class="noticeTbl">
-                        	<tr>
-                        		<th width="50%">작성자</th>
-                        		<!-- <th width="30%">답변 상태</th> -->
-                                <th width="50%">답변 날짜</th>
-                            </tr>
-
-                        	 <tr>
-                        	 	<td>관리자</td>
-                        	 	<td><fmt:formatDate pattern="yyyy.MM.dd" value="${dto.q_answer_date}" /></td>                                
-                            </tr>
-                            
-                            <tr>
-                            	<td colspan="3"  id="q_answer" class="q_answer"><div id="q_answer_div">${dto.q_answer}</div></td>
-                            </tr>
-  
-                        </table> --%>
                         </div>
                         
                        	<input type="hidden" value="${dto.q_no}" id="q_no" name="q_no">
